@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore build artifacts and dependencies in packages/naytak-react-ui
+packages/naytak-react-ui/build/
+packages/naytak-react-ui/dist/
+packages/naytak-react-ui/node_modules/
