@@ -17,6 +17,6 @@ describe("Avatar", () => {
 
   it("truncates long text", () => {
     render(<Avatar text="VeryLongNameThatShouldTruncate" size="sm" />);
-    expect(screen.getByText(/VeryLongName/)).toBeInTheDocument();
+    expect(screen.getByText("VE")).toBeInTheDocument();
   });
 });

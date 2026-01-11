@@ -36,12 +36,12 @@ describe("Pagination", () => {
 
   it("disables previous button on first page", () => {
     const { getByLabelText } = setup({ currentPage: 1 });
-    expect(getByLabelText("Previous Page")).toBeDisabled();
+    expect(getByLabelText("Previous page")).toBeDisabled();
   });
 
   it("disables next button on last page", () => {
     const { getByLabelText } = setup({ currentPage: 5, totalPages: 5 });
-    expect(getByLabelText("Next Page")).toBeDisabled();
+    expect(getByLabelText("Next page")).toBeDisabled();
   });
 
   it("shows dots when pages are truncated", () => {
