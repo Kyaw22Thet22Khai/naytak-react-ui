@@ -1,0 +1,1 @@
+import{j as a}from"./index-DeRGOciJ.js";function l({title:s,children:r,className:e}){const n=["ui-navbar",e].filter(Boolean).join(" ");return a.jsxs("header",{className:n,role:"banner",children:[a.jsx("div",{className:"ui-navbar__title","aria-label":s||"Navbar",children:s}),a.jsx("div",{className:"ui-navbar__actions",children:r})]})}export{l as N};

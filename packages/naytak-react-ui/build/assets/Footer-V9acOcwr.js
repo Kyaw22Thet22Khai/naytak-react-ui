@@ -1,0 +1,1 @@
+import{j as r}from"./index-DeRGOciJ.js";function n({children:o,className:t}){const e=["ui-footer",t].filter(Boolean).join(" ");return r.jsx("footer",{className:e,role:"contentinfo",children:o})}export{n as F};

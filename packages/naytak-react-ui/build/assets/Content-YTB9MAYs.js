@@ -1,0 +1,1 @@
+import{j as s}from"./index-DeRGOciJ.js";function a({children:n,className:o}){const t=["ui-content",o].filter(Boolean).join(" ");return s.jsx("main",{className:t,role:"main",children:n})}export{a as C};

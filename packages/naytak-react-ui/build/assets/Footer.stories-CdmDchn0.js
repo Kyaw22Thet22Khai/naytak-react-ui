@@ -1,0 +1,1 @@
+import{j as t}from"./index-DeRGOciJ.js";import{F as o}from"./Footer-V9acOcwr.js";const d={title:"Components/Footer"},r=()=>t.jsx(o,{children:"© 2026 Naytak"});typeof window<"u"&&window.document&&window.document.createElement&&document.documentElement.setAttribute("data-storyloaded","");export{r as Basic,d as default};

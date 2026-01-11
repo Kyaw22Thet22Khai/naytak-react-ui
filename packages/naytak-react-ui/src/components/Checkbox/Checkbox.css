@@ -1,0 +1,33 @@
+/* Checkbox */
+.ui-checkbox {
+  accent-color: #2563eb;
+  outline: none;
+}
+.ui-checkbox:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-radius: 0.375rem;
+}
+/* Sizes */
+.ui-checkbox--sm {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.ui-checkbox--md {
+  width: 1rem;
+  height: 1rem;
+}
+.ui-checkbox--lg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+/* Shared choice label/container for Checkbox and Radio */
+.ui-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+  user-select: none;
+}
+.ui-choice__label {
+  font-size: 0.875rem;
+}

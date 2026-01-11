@@ -1,0 +1,10 @@
+/* Content */
+.ui-content {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+}

@@ -1,0 +1,128 @@
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  padding-bottom: 0.55em;
+  font-size: 0.875em;
+  font-weight: 600;
+  background: #64748b;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  user-select: none;
+  box-shadow: 0 1px 4px 0 rgba(30, 41, 59, 0.08);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+  cursor: default;
+}
+
+.badge:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.13);
+  transform: translateY(-1px) scale(1.03);
+}
+
+.badge:active {
+  filter: brightness(0.97);
+  box-shadow: 0 1px 2px 0 rgba(30, 41, 59, 0.1);
+  transform: scale(0.98);
+}
+
+.badge--normal {
+  border-radius: 5px;
+}
+
+.badge--pill {
+  border-radius: 999px;
+}
+
+.badge--outline {
+  border-radius: 5px;
+  background: transparent !important;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.badge--outline.badge--primary {
+  color: #2563eb !important;
+  border: 1.5px solid #2563eb;
+  background: transparent !important;
+}
+.badge--outline.badge--secondary {
+  color: #64748b !important;
+  border: 1.5px solid #64748b;
+  background: transparent !important;
+}
+.badge--outline.badge--success {
+  color: #22c55e !important;
+  border: 1.5px solid #22c55e;
+  background: transparent !important;
+}
+.badge--outline.badge--warning {
+  color: #f59e42 !important;
+  border: 1.5px solid #f59e42;
+  background: transparent !important;
+}
+.badge--outline.badge--danger {
+  color: #ef4444 !important;
+  border: 1.5px solid #ef4444;
+  background: transparent !important;
+}
+.badge--outline.badge--dark {
+  color: #222 !important;
+  border: 1.5px solid #222;
+  background: transparent !important;
+}
+.badge--outline.badge--light {
+  color: #f3f4f6 !important;
+  border: 1.5px solid #f3f4f6;
+  background: transparent !important;
+}
+
+.badge--sm {
+  font-size: 0.75em;
+  padding: 0.15em 0.5em;
+}
+.badge--md {
+  font-size: 0.875em;
+  padding: 0.25em 0.75em;
+  padding-bottom: 0.55em;
+}
+.badge--lg {
+  font-size: 1.1em;
+  padding: 0.35em 1em;
+}
+
+.badge--primary {
+  background: linear-gradient(90deg, #2563eb 60%, #1d4ed8 100%);
+  color: #fff;
+}
+.badge--secondary {
+  background: linear-gradient(90deg, #64748b 60%, #334155 100%);
+  color: #e2e8f0;
+  border: 1.5px solid #334155;
+  box-sizing: border-box;
+}
+.badge--success {
+  background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
+  color: #fff;
+}
+.badge--warning {
+  background: linear-gradient(90deg, #f59e42 60%, #fbbf24 100%);
+  color: #fff;
+}
+.badge--danger {
+  background: linear-gradient(90deg, #ef4444 60%, #b91c1c 100%);
+  color: #fff;
+}
+.badge--dark {
+  background: linear-gradient(90deg, #222 60%, #0f172a 100%);
+  color: #f1f5f9;
+}
+.badge--light {
+  background: linear-gradient(90deg, #f3f4f6 60%, #e5e7eb 100%);
+  color: #222;
+}

@@ -1,0 +1,91 @@
+.snackbar {
+  position: fixed;
+  background: #323232;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  min-width: 200px;
+  max-width: 80vw;
+}
+
+/* Position Variants */
+.snackbar--top-right {
+  top: 32px;
+  right: 32px;
+  left: auto;
+  bottom: auto;
+  transform: none;
+}
+.snackbar--top-center {
+  top: 32px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+}
+.snackbar--top-left {
+  top: 32px;
+  left: 32px;
+  right: auto;
+  bottom: auto;
+  transform: none;
+}
+.snackbar--bottom-right {
+  bottom: 32px;
+  right: 32px;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+.snackbar--bottom-center {
+  bottom: 32px;
+  left: 50%;
+  right: auto;
+  top: auto;
+  transform: translateX(-50%);
+}
+.snackbar--bottom-left {
+  bottom: 32px;
+  left: 32px;
+  right: auto;
+  top: auto;
+  transform: none;
+}
+
+.snackbar--primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.snackbar--secondary {
+  background: #64748b;
+  color: #fff;
+}
+
+.snackbar--success {
+  background: #22c55e;
+  color: #fff;
+}
+
+.snackbar--danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.snackbar--warning {
+  background: #f59e42;
+  color: #fff;
+}
+
+.snackbar-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 16px;
+  cursor: pointer;
+}

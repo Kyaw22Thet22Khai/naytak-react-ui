@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test-and-stories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run library unit tests
+        run: npm run -w packages/naytak-react-ui test -- --run
+
+      - name: Build Ladle stories
+        run: npm run -w packages/naytak-react-ui ladle:build
+
+      - name: Upload stories artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ladle-build
+          path: packages/naytak-react-ui/build
+          if-no-files-found: error

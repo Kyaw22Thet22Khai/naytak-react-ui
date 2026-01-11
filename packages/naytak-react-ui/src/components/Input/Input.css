@@ -1,0 +1,144 @@
+/* Field and Input */
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ui-field--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ui-field__label {
+  font-size: 0.875rem;
+  color: #374151;
+}
+.ui-field__control {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ui-input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  box-shadow: 0 1px 4px 0 rgba(30, 41, 59, 0.06);
+  transition:
+    border 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.ui-input--sm {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.75rem;
+}
+.ui-input--md {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+.ui-input--lg {
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+}
+.ui-input:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.18),
+    0 2px 8px 0 rgba(30, 41, 59, 0.1);
+  background: #f8fafc;
+}
+.ui-input:hover:not(:focus):not(:disabled) {
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.1);
+}
+
+.ui-input__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+.ui-input__icon--start {
+  left: 0.625rem;
+}
+.ui-input__icon--end {
+  right: 0.625rem;
+}
+
+/* Input clear/action button */
+.ui-input__action {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ui-input__action:hover {
+  color: #6b7280;
+}
+.ui-input__action--end {
+  right: 0.5rem;
+}
+
+/* Grouped field */
+.ui-field--group .ui-field__control {
+  border-radius: 0.375rem;
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+}
+.ui-field--group .ui-input {
+  border: none;
+  border-radius: 0;
+}
+.ui-field--group .ui-select {
+  border: none;
+  border-radius: 0;
+}
+
+/* Addons */
+.ui-addon {
+  background: #f9fafb;
+  color: #374151;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+.ui-input--sm ~ .ui-addon,
+.ui-addon:has(+ .ui-input--sm) {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.5rem;
+}
+.ui-input--lg ~ .ui-addon,
+.ui-addon:has(+ .ui-input--lg) {
+  font-size: 1rem;
+  padding: 0.625rem 1rem;
+}
+.ui-addon--prefix {
+  border-right: 1px solid #e5e7eb;
+}
+.ui-addon--suffix {
+  border-left: 1px solid #e5e7eb;
+}
+
+/* Icon paddings */
+.ui-input--icon-start {
+  padding-left: 2rem;
+}
+.ui-input--icon-end {
+  padding-right: 2rem;
+}

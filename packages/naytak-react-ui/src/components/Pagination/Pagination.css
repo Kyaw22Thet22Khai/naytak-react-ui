@@ -1,0 +1,189 @@
+/* =========================================================
+   Base Table Pagination
+========================================================= */
+.table-pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1em;
+  color: #000000;
+}
+
+/* Select */
+.table-pagination__select {
+  background: none;
+  color: #000;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px 28px 4px 8px;
+  font-size: 1em;
+  appearance: none;
+  outline: none;
+  min-width: 48px;
+  position: relative;
+}
+
+.table-pagination__select:focus-visible {
+  border-color: #007bff;
+}
+
+/* Option (native dropdown) */
+.table-pagination__select option {
+  color: #000;
+}
+
+/* Label / text */
+.table-pagination__text,
+.table-pagination__label,
+.table-pagination__range {
+  color: #000;
+}
+
+/* =========================================================
+   Pagination Base
+========================================================= */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Arrow buttons */
+.pagination__arrow {
+  background: none;
+  border: 1px solid #444;
+  color: #000;
+  font-size: 1.1em;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border 0.2s;
+}
+
+.pagination__arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pagination__arrow:disabled {
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Page buttons */
+.pagination__page {
+  background: none;
+  border: 1px solid #444;
+  color: #000;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border 0.2s;
+}
+
+.pagination__page:hover:not(.pagination__page--active) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active page */
+.pagination__page--active {
+  background: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+/* Dots */
+.pagination__dots {
+  padding: 0 0.5em;
+  color: #aaa;
+  user-select: none;
+}
+
+/* =========================================================
+   Shape Variants
+========================================================= */
+
+/* Rounded */
+.pagination--rounded .pagination__page,
+.pagination--rounded .pagination__arrow,
+.table-pagination--rounded .table-pagination__select {
+  border-radius: 6px;
+}
+
+/* =========================================================
+   Borderless Variant (FIXED)
+========================================================= */
+
+.pagination--borderless .pagination__page,
+.pagination--borderless .pagination__arrow {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #000;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover / focus feedback */
+.pagination--borderless .pagination__page:hover:not(.pagination__page--active),
+.pagination--borderless .pagination__arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active page still visible */
+.pagination--borderless .pagination__page--active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* =========================================================
+   Size Variants
+========================================================= */
+
+/* Small */
+.pagination--sm .pagination__page,
+.pagination--sm .pagination__arrow {
+  font-size: 0.85em;
+  padding: 0.2em 0.5em;
+}
+
+/* Medium (default) */
+.pagination--md .pagination__page,
+.pagination--md .pagination__arrow {
+  font-size: 1em;
+  padding: 0.3em 0.7em;
+}
+
+/* Large */
+.pagination--lg .pagination__page,
+.pagination--lg .pagination__arrow {
+  font-size: 1.25em;
+  padding: 0.4em 1em;
+}
+
+/* =========================================================
+   Accessibility
+========================================================= */
+.pagination__arrow:focus-visible,
+.pagination__page:focus-visible,
+.table-pagination__select:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}

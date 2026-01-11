@@ -1,0 +1,17 @@
+/* Dashboard Layout */
+.ui-dashboard {
+  display: flex;
+  height: 100vh;
+  background: #f3f4f6;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ui-dashboard__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}

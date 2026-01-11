@@ -1,0 +1,40 @@
+/* Select */
+.ui-select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  box-shadow: 0 1px 4px 0 rgba(30, 41, 59, 0.06);
+  transition:
+    border 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.ui-select--sm {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.75rem;
+}
+.ui-select--md {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+.ui-select--lg {
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+}
+.ui-select:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.18),
+    0 2px 8px 0 rgba(30, 41, 59, 0.1);
+  background: #f8fafc;
+}
+.ui-select:hover:not(:focus):not(:disabled) {
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.1);
+}
