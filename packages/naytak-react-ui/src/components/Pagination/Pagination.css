@@ -2,24 +2,24 @@
    Base Table Pagination
 ========================================================= */
 .table-pagination {
-  display: flex;
   align-items: center;
-  gap: 16px;
+  color: #000;
+  display: flex;
   font-size: 1em;
-  color: #000000;
+  gap: 16px;
 }
 
 /* Select */
 .table-pagination__select {
+  appearance: none;
   background: none;
-  color: #000;
   border: 1px solid #444;
   border-radius: 4px;
-  padding: 4px 28px 4px 8px;
+  color: #000;
   font-size: 1em;
-  appearance: none;
-  outline: none;
   min-width: 48px;
+  outline: none;
+  padding: 4px 28px 4px 8px;
   position: relative;
 }
 
@@ -43,32 +43,32 @@
    Pagination Base
 ========================================================= */
 .pagination {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 4px;
 }
 
 /* Arrow buttons */
 .pagination__arrow {
+  align-items: center;
   background: none;
   border: 1px solid #444;
-  color: #000;
-  font-size: 1.1em;
-  padding: 0.3em 0.7em;
-  cursor: pointer;
   border-radius: 4px;
-  min-width: 36px;
-  height: 36px;
+  color: #000;
+  cursor: pointer;
   display: inline-flex;
-  align-items: center;
+  font-size: 1.1em;
+  height: 36px;
   justify-content: center;
+  min-width: 36px;
+  padding: 0.3em 0.7em;
   transition:
     background 0.2s,
     border 0.2s;
 }
 
 .pagination__arrow:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgb(255 255 255 / 8%);
 }
 
 .pagination__arrow:disabled {
@@ -78,24 +78,24 @@
 
 /* Page buttons */
 .pagination__page {
+  align-items: center;
   background: none;
   border: 1px solid #444;
-  color: #000;
-  padding: 0.3em 0.7em;
-  cursor: pointer;
   border-radius: 4px;
-  min-width: 36px;
-  height: 36px;
+  color: #000;
+  cursor: pointer;
   display: inline-flex;
-  align-items: center;
+  height: 36px;
   justify-content: center;
+  min-width: 36px;
+  padding: 0.3em 0.7em;
   transition:
     background 0.2s,
     border 0.2s;
 }
 
 .pagination__page:hover:not(.pagination__page--active) {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgb(255 255 255 / 8%);
 }
 
 /* Active page */
@@ -107,8 +107,8 @@
 
 /* Dots */
 .pagination__dots {
-  padding: 0 0.5em;
   color: #aaa;
+  padding: 0 0.5em;
   user-select: none;
 }
 
@@ -129,22 +129,22 @@
 
 .pagination--borderless .pagination__page,
 .pagination--borderless .pagination__arrow {
-  border: none;
+  align-items: center;
   background: transparent;
+  border: none;
   box-shadow: none;
   color: #000;
-  min-width: 36px;
-  height: 36px;
-  padding: 0 10px;
   display: inline-flex;
-  align-items: center;
+  height: 36px;
   justify-content: center;
+  min-width: 36px;
+  padding: 0 10px;
 }
 
 /* Hover / focus feedback */
 .pagination--borderless .pagination__page:hover:not(.pagination__page--active),
 .pagination--borderless .pagination__arrow:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgb(255 255 255 / 8%);
 }
 
 /* Active page still visible */

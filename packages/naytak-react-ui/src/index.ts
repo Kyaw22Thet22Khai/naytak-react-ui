@@ -1,3 +1,7 @@
+export { TableHead, TableBody } from "./components/Table/Table";
+export type { TableHeadProps, TableBodyProps } from "./components/Table/Table";
+export { Table } from "./components/Table/Table";
+export type { TableProps, TableType } from "./components/Table/Table";
 export { default as Badge } from "./components/Badge/Badge";
 export type { BadgeProps, BadgeColor } from "./components/Badge/Badge";
 export { default as AvatarGroup } from "./components/Avatar/AvatarGroup";
@@ -78,8 +82,17 @@ export type {
 export type { BreadcrumbSize } from "./components/Breadcrumb/Breadcrumb";
 export { Grid, GridItem } from "./components/Grid/Grid";
 export type { GridProps, GridItemProps } from "./components/Grid/Grid";
+export { Box } from "./components/Box/Box";
+export type { BoxProps } from "./components/Box/Box";
+
+export { List } from "./components/Lists/List";
+export { ListItem } from "./components/Lists/ListItem";
 
 // CSS imports (scoped per component)
+import "./shared.css";
+import "./color-palette.css";
+import "./typography.css";
+import "./components/Box/Box.css";
 import "./components/Button/Button.css";
 import "./components/Card/Card.css";
 import "./components/Checkbox/Checkbox.css";
@@ -104,3 +117,5 @@ import "./components/Tooltip/Tooltip.css";
 import "./components/Progress/Progress.css";
 import "./components/Avatar/Avatar.css";
 import "./components/Badge/Badge.css";
+import "./components/Table/Table.css";
+import "./components/Lists/List.css";

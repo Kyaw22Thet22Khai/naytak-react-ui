@@ -1,58 +1,45 @@
 .snackbar {
-  position: fixed;
-  background: #323232;
-  color: #fff;
-  padding: 16px 24px;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
   align-items: center;
-  z-index: 9999;
-  min-width: 200px;
+  background: #323232;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+  color: #fff;
+  display: flex;
   max-width: 80vw;
+  min-width: 200px;
+  padding: 16px 24px;
+  position: fixed;
+  z-index: 9999;
 }
 
 /* Position Variants */
 .snackbar--top-right {
-  top: 32px;
-  right: 32px;
-  left: auto;
-  bottom: auto;
+  inset: 32px 32px auto auto;
   transform: none;
 }
+
 .snackbar--top-center {
-  top: 32px;
-  left: 50%;
-  right: auto;
-  bottom: auto;
+  inset: 32px auto auto 50%;
   transform: translateX(-50%);
 }
+
 .snackbar--top-left {
-  top: 32px;
-  left: 32px;
-  right: auto;
-  bottom: auto;
+  inset: 32px auto auto 32px;
   transform: none;
 }
+
 .snackbar--bottom-right {
-  bottom: 32px;
-  right: 32px;
-  left: auto;
-  top: auto;
+  inset: auto 32px 32px auto;
   transform: none;
 }
+
 .snackbar--bottom-center {
-  bottom: 32px;
-  left: 50%;
-  right: auto;
-  top: auto;
+  inset: auto auto 32px 50%;
   transform: translateX(-50%);
 }
+
 .snackbar--bottom-left {
-  bottom: 32px;
-  left: 32px;
-  right: auto;
-  top: auto;
+  inset: auto auto 32px 32px;
   transform: none;
 }
 
@@ -85,7 +72,7 @@
   background: none;
   border: none;
   color: #fff;
+  cursor: pointer;
   font-size: 20px;
   margin-left: 16px;
-  cursor: pointer;
 }

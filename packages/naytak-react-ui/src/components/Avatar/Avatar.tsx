@@ -51,7 +51,7 @@ const Avatar: React.FC<AvatarProps> = ({
 }) => {
   const dimension = sizeMap[size] || sizeMap.md;
   const borderRadius = variant === "square" ? "8px" : "50%";
-  const colorClass = image ? "" : `avatar--${color}`;
+  const colorClass = image ? "" : `avatar-${color}`;
   return (
     <div
       className={`avatar avatar--${size} avatar--${variant} ${colorClass}`}

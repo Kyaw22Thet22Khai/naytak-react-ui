@@ -1,21 +1,24 @@
 /* Card */
 .ui-card {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.08);
+  box-shadow: 0 2px 8px 0 rgb(30 41 59 / 8%);
   color: #111827;
   transition:
     box-shadow 0.2s,
     transform 0.15s,
     border-color 0.2s;
 }
+
 .ui-card--sm {
   padding: 0.75rem;
 }
+
 .ui-card--md {
   padding: 1rem;
 }
+
 .ui-card--lg {
   padding: 1.25rem;
 }
@@ -23,38 +26,44 @@
 .ui-card__header {
   margin-bottom: 0.5rem;
 }
+
 .ui-card__title {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .ui-card__subtitle {
-  font-size: 0.875rem;
   color: #6b7280;
+  font-size: 0.875rem;
 }
+
 .ui-card__body {
   font-size: 0.875rem;
 }
+
 .ui-card__footer {
+  border-top: 1px solid #f3f4f6;
   margin-top: 0.75rem;
   padding-top: 0.5rem;
-  border-top: 1px solid #f3f4f6;
 }
 
 /* Card variants */
 .ui-card--outlined {
-  box-shadow: none;
   border-color: #d1d5db;
+  box-shadow: none;
 }
+
 .ui-card--elevated {
   border-color: transparent;
   box-shadow:
-    0 8px 24px rgba(30, 41, 59, 0.13),
-    0 3px 8px rgba(30, 41, 59, 0.1);
+    0 8px 24px rgb(30 41 59 / 13%),
+    0 3px 8px rgb(30 41 59 / 10%);
 }
+
 .ui-card--interactive:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow:
-    0 12px 32px rgba(30, 41, 59, 0.16),
-    0 6px 16px rgba(30, 41, 59, 0.12);
   border-color: #d1d5db;
+  box-shadow:
+    0 12px 32px rgb(30 41 59 / 16%),
+    0 6px 16px rgb(30 41 59 / 12%);
+  transform: translateY(-2px) scale(1.02);
 }

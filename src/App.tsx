@@ -1,21 +1,27 @@
 import { useState } from "react";
 import {
+  Box,
   Card,
   Tabs,
   Grid,
+  List,
   Modal,
   Radio,
   Input,
   Badge,
+  Table,
   Button,
   Select,
   Switch,
   Avatar,
   Tooltip,
+  ListItem,
   GridItem,
   Checkbox,
   Snackbar,
   Progress,
+  TableHead,
+  TableBody,
   Pagination,
   AvatarGroup,
   SidebarItem,
@@ -43,6 +49,11 @@ export default function App() {
     | "progress"
     | "avatar"
     | "badge"
+    | "table"
+    | "colors"
+    | "box"
+    | "Lists"
+    | "Typography"
   >("home");
   const [openSm, setOpenSm] = useState(false);
   const [openMd, setOpenMd] = useState(false);
@@ -83,6 +94,14 @@ export default function App() {
         return [...base, { label: "Avatar" }];
       case "badge":
         return [...base, { label: "Badge" }];
+      case "table":
+        return [...base, { label: "Table" }];
+      case "colors":
+        return [...base, { label: "Colors" }];
+      case "box":
+        return [...base, { label: "Box" }];
+      case "Lists":
+        return [...base, { label: "Lists" }];
       default:
         return base;
     }
@@ -161,6 +180,26 @@ export default function App() {
             active={page === "badge"}
             onClick={() => setPage("badge")}
           />
+          <SidebarItem
+            label="Table"
+            active={page === "table"}
+            onClick={() => setPage("table")}
+          />
+          <SidebarItem
+            label="Colors"
+            active={page === "colors"}
+            onClick={() => setPage("colors")}
+          />
+          <SidebarItem
+            label="Box"
+            active={page === "box"}
+            onClick={() => setPage("box")}
+          />
+          <SidebarItem
+            label="Lists"
+            active={page === "Lists"}
+            onClick={() => setPage("Lists")}
+          />
         </>
       }
       navbarActions={
@@ -189,13 +228,63 @@ export default function App() {
       />
       {page === "home" && (
         <>
-          <h1>Welcome</h1>
-          <p>Use the sidebar to navigate.</p>
-          <Tooltip content="This is a tooltip!" position="top">
-            <Button variant="primary" onClick={() => setSnackbarOpen(true)}>
-              Show Toast
-            </Button>
-          </Tooltip>
+          <h2 style={{ margin: 0 }}>Welcome to Naytak React UI Demo!</h2>
+          <Grid container fluid rowSpacing={1} style={{ marginTop: 16 }}>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="text-xs d-block">XS</span>
+              <span className="text-sm d-block">SM</span>
+              <span className="text-md d-block">MD</span>
+              <span className="text-lg d-block">LG</span>
+              <span className="text-xl d-block">XL</span>
+              <span className="text-2xl d-block">2XL</span>
+              <span className="text-3xl d-block">3XL</span>
+              <span className="text-4xl d-block">4XL</span>
+              <span className="text-5xl d-block">5XL</span>
+            </GridItem>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="font-thin d-block">Thin</span>
+              <span className="font-light d-block">Light</span>
+              <span className="font-normal d-block">Normal</span>
+              <span className="font-medium d-block">Medium</span>
+              <span className="font-semibold d-block">Semibold</span>
+              <span className="font-bold d-block">Bold</span>
+              <span className="font-extrabold d-block">Extrabold</span>
+              <span className="font-black d-block">Black</span>
+            </GridItem>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="italic d-block">Italic</span>
+              <span className="not-italic d-block">Not Italic</span>
+            </GridItem>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="leading-none d-block">Leading None</span>
+              <span className="leading-tight d-block">Leading Tight</span>
+              <span className="leading-snug d-block">Leading Snug</span>
+              <span className="leading-normal d-block">Leading Normal</span>
+              <span className="leading-relaxed d-block">Leading Relaxed</span>
+              <span className="leading-loose d-block">Leading Loose</span>
+            </GridItem>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="tracking-tighter d-block">Tracking Tighter</span>
+              <span className="tracking-tight d-block">Tracking Tight</span>
+              <span className="tracking-normal d-block">Tracking Normal</span>
+              <span className="tracking-wide d-block">Tracking Wide</span>
+              <span className="tracking-wider d-block">Tracking Wider</span>
+              <span className="tracking-widest d-block">Tracking Widest</span>
+            </GridItem>
+            <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+              <span className="uppercase d-block">Uppercase</span>
+              <span className="lowercase d-block">LOWERCASE</span>
+              <span className="capitalize d-block">hello world</span>
+              <span className="normal-case d-block">Normal Case</span>
+              <span className="underline d-block">underline</span>
+              <span className="line-through d-block">line-through</span>
+              <span className="no-underline d-block">no-underline</span>
+              <span className="overline d-block">overline</span>
+              <span className="truncate d-block">Truncate</span>
+              <span className="ellipsis d-block">Ellipsis</span>
+              <span className="clip d-block">Clip</span>
+            </GridItem>
+          </Grid>
         </>
       )}
       {page === "buttons" && (
@@ -927,7 +1016,6 @@ export default function App() {
           </AvatarGroup>
         </>
       )}
-
       {page === "badge" && (
         <>
           <h2 style={{ margin: 0 }}>Badge Demo</h2>
@@ -1010,6 +1098,193 @@ export default function App() {
               </Badge>
             </GridItem>
           </Grid>
+        </>
+      )}
+      {page === "table" && (
+        <>
+          <h2 style={{ margin: 0 }}>Table Demo</h2>
+          <Grid container fluid rowSpacing={1}>
+            <GridItem xs={12} md={6} lg={6} spacing={0.5}>
+              <Table type="bordered">
+                <TableHead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                  </tr>
+                </TableHead>
+                <TableBody>
+                  <tr>
+                    <td>Jane Doe</td>
+                    <td>jane@example.com</td>
+                    <td>Active</td>
+                  </tr>
+                  <tr>
+                    <td>John Smith</td>
+                    <td>john@example.com</td>
+                    <td>Inactive</td>
+                  </tr>
+                </TableBody>
+              </Table>
+            </GridItem>
+            <GridItem xs={12} md={6} lg={6} spacing={0.5}>
+              <Table type="hoverable">
+                <TableHead color="secondary">
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                  </tr>
+                </TableHead>
+                <TableBody>
+                  <tr>
+                    <td>Widget</td>
+                    <td>$10</td>
+                    <td>25</td>
+                  </tr>
+                  <tr>
+                    <td>Gadget</td>
+                    <td>$20</td>
+                    <td>12</td>
+                  </tr>
+                </TableBody>
+              </Table>
+            </GridItem>
+          </Grid>
+          <Grid container fluid rowSpacing={1}>
+            <GridItem xs={12} md={6} lg={6} spacing={0.5}>
+              <Table type="small">
+                <TableHead color="dark">
+                  <tr>
+                    <th>Country</th>
+                    <th>Capital</th>
+                  </tr>
+                </TableHead>
+                <TableBody>
+                  <tr>
+                    <td>France</td>
+                    <td>Paris</td>
+                  </tr>
+                  <tr>
+                    <td>Japan</td>
+                    <td>Tokyo</td>
+                  </tr>
+                </TableBody>
+              </Table>
+            </GridItem>
+            <GridItem xs={12} md={6} lg={6} spacing={0.5}>
+              <Table type="resposive">
+                <TableHead color="danger">
+                  <tr>
+                    <th>Device</th>
+                    <th>OS</th>
+                    <th>Version</th>
+                  </tr>
+                </TableHead>
+                <TableBody>
+                  <tr>
+                    <td>iPhone</td>
+                    <td>iOS</td>
+                    <td>17.2</td>
+                  </tr>
+                  <tr>
+                    <td>Pixel</td>
+                    <td>Android</td>
+                    <td>14</td>
+                  </tr>
+                </TableBody>
+              </Table>
+            </GridItem>
+          </Grid>
+        </>
+      )}
+      {page === "colors" && (
+        <div style={{ display: "grid", gap: 16, maxWidth: 600 }}>
+          <h2 style={{ margin: 0 }}>Color Palette</h2>
+          <div className="bg-indigo-50 w-8 h-2 rounded shadow">Indigo</div>
+        </div>
+      )}
+      {page === "box" && (
+        <>
+          <h2 style={{ margin: 0 }}>Box Demo</h2>
+          <Box className="bg-sand-90 w-8 h-8 rounded shadow text-indigo-10 align-baseline flex items-center justify-center">
+            Box Content
+          </Box>
+        </>
+      )}
+      {page === "Lists" && (
+        <>
+          <h2 style={{ margin: 0 }}>List Demo</h2>
+          <Grid container fluid rowSpacing={1}>
+            <GridItem xs={12} md={4} lg={4} spacing={0.5}>
+              <List>
+                <ListItem className="font-roboto bg-amber-100 text-plum-10">
+                  This is the first item
+                </ListItem>
+                <ListItem className="font-open-sans bg-amber-100 text-plum-10">
+                  This is the second item
+                </ListItem>
+                <ListItem className="font-montserrat bg-amber-100 text-plum-10">
+                  This is the third item
+                </ListItem>
+              </List>
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={0.5}>
+              <List>
+                <ListItem className="font-fira-mono">
+                  This is the first item
+                </ListItem>
+                <ListItem className="font-inter">
+                  This is the second item
+                </ListItem>
+                <ListItem className="font-lato">
+                  This is the third item
+                </ListItem>
+              </List>
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={0.5}>
+              <List>
+                <ListItem className="font-nunito">
+                  This is the first item
+                </ListItem>
+                <ListItem className="font-poppins">
+                  This is the second item
+                </ListItem>
+                <ListItem className="font-raleway">
+                  This is the third item
+                </ListItem>
+              </List>
+            </GridItem>
+          </Grid>
+          <Grid container fluid rowSpacing={1}>
+            <GridItem xs={12} md={4} lg={4} spacing={0.5}>
+              <List>
+                <ListItem className="font-source-sans-pro">
+                  This is the first item
+                </ListItem>
+                <ListItem className="font-merriweather">
+                  This is the second item
+                </ListItem>
+                <ListItem className="font-oswald">
+                  This is the third item
+                </ListItem>
+              </List>
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={0.5}>
+              <List>
+                <ListItem className="font-pt-sans">
+                  This is the first item
+                </ListItem>
+                <ListItem className="font-ubuntu">
+                  This is the second item
+                </ListItem>
+                <ListItem className="font-playfair-display">
+                  This is the third item
+                </ListItem>
+              </List>
+            </GridItem>
+          </Grid>
+          <Grid container fluid rowSpacing={1}></Grid>
         </>
       )}
     </DashboardLayout>

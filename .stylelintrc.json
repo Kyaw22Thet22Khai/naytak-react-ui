@@ -1,0 +1,29 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-order"],
+
+  "rules": {
+    "font-weight-notation": "numeric",
+    "selector-pseudo-element-colon-notation": "double",
+    "declaration-block-single-line-max-declarations": 1,
+    "order/properties-alphabetical-order": true,
+
+    "no-descending-specificity": null
+  },
+
+  "overrides": [
+    {
+      "files": ["**/*.module.css"],
+      "rules": {
+        "selector-class-pattern": null,
+        "selector-id-pattern": null,
+        "selector-pseudo-class-no-unknown": [
+          true,
+          {
+            "ignorePseudoClasses": ["global", "local"]
+          }
+        ]
+      }
+    }
+  ]
+}
