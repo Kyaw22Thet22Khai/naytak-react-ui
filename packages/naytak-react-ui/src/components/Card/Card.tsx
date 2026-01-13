@@ -31,10 +31,10 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
   ref
 ) {
   const rootCls = [
-    "ui-card",
-    size ? `ui-card--${size}` : null,
-    variant !== "default" ? `ui-card--${variant}` : null,
-    interactive ? "ui-card--interactive" : null,
+    "card",
+    size ? `card-${size}` : null,
+    variant !== "default" ? `card-${variant}` : null,
+    interactive ? "card-interactive" : null,
     className,
   ]
     .filter(Boolean)
@@ -43,15 +43,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
   return (
     <div ref={ref} className={rootCls} {...props}>
       {(title || subtitle) && (
-        <div className="ui-card__header">
-          {title ? <div className="ui-card__title">{title}</div> : null}
-          {subtitle ? (
-            <div className="ui-card__subtitle">{subtitle}</div>
-          ) : null}
+        <div className="card-header">
+          {title ? <div className="card-title">{title}</div> : null}
+          {subtitle ? <div className="card-subtitle">{subtitle}</div> : null}
         </div>
       )}
-      <div className="ui-card__body">{children}</div>
-      {footer ? <div className="ui-card__footer">{footer}</div> : null}
+      <div className="card-body">{children}</div>
+      {footer ? <div className="card-footer">{footer}</div> : null}
     </div>
   );
 });

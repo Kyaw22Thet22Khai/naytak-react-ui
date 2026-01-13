@@ -14,20 +14,20 @@ export interface NotchedInputProps extends Omit<
 export const NotchedInput = forwardRef<HTMLInputElement, NotchedInputProps>(
   function NotchedInput({ label, size = "md", className, ...props }, ref) {
     const fieldsetCls = [
-      "ui-notched__fieldset",
-      size ? `ui-notched--${size}` : null,
+      "notched-fieldset",
+      size ? `notched-${size}` : null,
       className,
     ]
       .filter(Boolean)
       .join(" ");
 
     return (
-      <div className="ui-notched-field">
+      <div className="notched-field">
         <fieldset className={fieldsetCls}>
-          <legend className="ui-notched__label">
-            <span className="ui-notched__label-text">{label}</span>
+          <legend className="notched-label">
+            <span className="notched-label-text">{label}</span>
           </legend>
-          <input ref={ref} className="ui-input" {...props} />
+          <input ref={ref} className="input" {...props} />
         </fieldset>
       </div>
     );

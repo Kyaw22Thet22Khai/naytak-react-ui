@@ -28,7 +28,7 @@ const Progress: React.FC<ProgressProps> = ({
     const offset = circumference - (value / 100) * circumference;
     return (
       <div
-        className={`progress-circular progress--${color}`}
+        className={`progress-circular progress-${color}`}
         style={{ width: size, height: size }}>
         <svg width={size} height={size}>
           <circle
@@ -56,7 +56,7 @@ const Progress: React.FC<ProgressProps> = ({
   }
   // Linear
   return (
-    <div className={`progress-linear progress--${color}`}>
+    <div className={`progress-linear progress-${color}`}>
       <div className="progress-linear-bar" style={{ width: `${value}%` }} />
       <span className="progress-linear-label">{Math.round(value)}%</span>
     </div>

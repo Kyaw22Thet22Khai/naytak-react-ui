@@ -1,5 +1,6 @@
 /* Switch */
-.ui-switch {
+
+.switch {
   align-items: center;
   cursor: pointer;
   display: inline-flex;
@@ -7,12 +8,12 @@
   user-select: none;
 }
 
-.ui-switch__label {
+.switch-label {
   color: #111827;
   font-size: 0.875rem;
 }
 
-.ui-switch__input {
+.switch-input {
   height: 1px;
   opacity: 0;
   overflow: hidden;
@@ -20,7 +21,7 @@
   width: 1px;
 }
 
-.ui-switch__track {
+.switch-track {
   background: #e5e7eb;
   border-radius: 9999px;
   display: inline-block;
@@ -28,23 +29,23 @@
   transition: background-color 150ms ease;
 }
 
-.ui-switch--sm .ui-switch__track {
+.switch-sm .switch-track {
   height: 1rem;
   width: 2rem;
 }
 
-.ui-switch--md .ui-switch__track {
+.switch-md .switch-track {
   height: 1.25rem;
   width: 2.5rem;
 }
 
-.ui-switch--lg .ui-switch__track {
+.switch-lg .switch-track {
   height: 1.5rem;
   width: 3rem;
 }
 
 /* Thumb */
-.ui-switch__track::after {
+.switch-track::after {
   background: #fff;
   border-radius: 9999px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
@@ -59,39 +60,39 @@
     height 150ms ease;
 }
 
-.ui-switch--sm .ui-switch__track::after {
+.switch-sm .switch-track::after {
   height: 0.75rem;
   width: 0.75rem;
 }
 
-.ui-switch--md .ui-switch__track::after {
+.switch-md .switch-track::after {
   height: 0.9rem;
   width: 0.9rem;
 }
 
-.ui-switch--lg .ui-switch__track::after {
+.switch-lg .switch-track::after {
   height: 1.1rem;
   width: 1.1rem;
 }
 
 /* Checked state */
-.ui-switch__input:checked + .ui-switch__track {
+.switch-input:checked + .switch-track {
   background: #2563eb;
 }
 
-.ui-switch--sm .ui-switch__input:checked + .ui-switch__track::after {
+.switch-sm .switch-input:checked + .switch-track::after {
   left: calc(2rem - 2px - 0.75rem);
 }
 
-.ui-switch--md .ui-switch__input:checked + .ui-switch__track::after {
+.switch-md .switch-input:checked + .switch-track::after {
   left: calc(2.5rem - 2px - 0.9rem);
 }
 
-.ui-switch--lg .ui-switch__input:checked + .ui-switch__track::after {
+.switch-lg .switch-input:checked + .switch-track::after {
   left: calc(3rem - 2px - 1.1rem);
 }
 
 /* Focus ring */
-.ui-switch__input:focus-visible + .ui-switch__track {
+.switch-input:focus-visible + .switch-track {
   box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
 }

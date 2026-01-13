@@ -36,18 +36,14 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ref
   ) {
     const fieldClasses = [
-      "ui-field",
-      inline ? "ui-field--inline" : null,
+      "field",
+      inline ? "field-inline" : null,
       containerClassName,
     ]
       .filter(Boolean)
       .join(" ");
 
-    const selectClasses = [
-      "ui-select",
-      size ? `ui-select--${size}` : null,
-      className,
-    ]
+    const selectClasses = ["select", size ? `select-${size}` : null, className]
       .filter(Boolean)
       .join(" ");
 
@@ -55,13 +51,13 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       <div className={fieldClasses}>
         {label ? (
           <label
-            className={["ui-field__label", labelClassName]
+            className={["field-label", labelClassName]
               .filter(Boolean)
               .join(" ")}>
             {label}
           </label>
         ) : null}
-        <div className="ui-field__control">
+        <div className="field-control">
           <select ref={ref} className={selectClasses} {...props}>
             {options
               ? options.map((opt) => (

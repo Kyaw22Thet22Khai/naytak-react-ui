@@ -15,11 +15,7 @@ export function Container({
   className,
   ...props
 }: ContainerProps) {
-  const classes = [
-    "ui-container",
-    fluid ? "ui-container--fluid" : null,
-    className,
-  ]
+  const classes = ["ui-container", fluid ? "container-fluid" : null, className]
     .filter(Boolean)
     .join(" ");
   return (

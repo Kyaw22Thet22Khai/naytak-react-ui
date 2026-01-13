@@ -34,59 +34,52 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   ref
 ) {
   const autoId = useId();
-  const inputId = id ?? `ui-input-${autoId}`;
+  const inputId = id ?? `input-${autoId}`;
 
   const fieldClasses = [
-    "ui-field",
-    inline ? "ui-field--inline" : null,
-    addonBefore || addonAfter ? "ui-field--group" : null,
+    "field",
+    inline ? "field-inline" : null,
+    addonBefore || addonAfter ? "field-group" : null,
     containerClassName,
   ]
     .filter(Boolean)
     .join(" ");
 
   const inputClasses = [
-    "ui-input",
-    size ? `ui-input--${size}` : null,
-    iconStart ? "ui-input--icon-start" : null,
-    iconEnd ? "ui-input--icon-end" : null,
+    "input",
+    size ? `input-${size}` : null,
+    iconStart ? "input-icon-start" : null,
+    iconEnd ? "input-icon-end" : null,
     className,
   ]
     .filter(Boolean)
     .join(" ");
-
   return (
     <div className={fieldClasses}>
       {label ? (
         <label
-          className={["ui-field__label", labelClassName]
-            .filter(Boolean)
-            .join(" ")}
+          className={["field-label", labelClassName].filter(Boolean).join(" ")}
           htmlFor={inputId}>
           {label}
         </label>
       ) : null}
-      <div className="ui-field__control">
+      <div className="field-control">
         {iconStart ? (
-          <span
-            className="ui-input__icon ui-input__icon--start"
-            aria-hidden="true">
+          <span className="input-icon input-icon-start" aria-hidden="true">
             {iconStart}
           </span>
         ) : null}
         {addonBefore ? (
-          <span className="ui-addon ui-addon--prefix">{addonBefore}</span>
+          <span className="addon addon-prefix">{addonBefore}</span>
         ) : null}
         <input id={inputId} ref={ref} className={inputClasses} {...props} />
+        {addonAfter ? (
+          <span className="addon addon-suffix">{addonAfter}</span>
+        ) : null}
         {iconEnd ? (
-          <span
-            className="ui-input__icon ui-input__icon--end"
-            aria-hidden="true">
+          <span className="input-icon input-icon-end" aria-hidden="true">
             {iconEnd}
           </span>
-        ) : null}
-        {addonAfter ? (
-          <span className="ui-addon ui-addon--suffix">{addonAfter}</span>
         ) : null}
       </div>
     </div>

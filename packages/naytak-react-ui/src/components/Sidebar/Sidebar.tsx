@@ -16,10 +16,10 @@ export interface SidebarProps {
   title?: string;
 }
 
-const base = "ui-sidebar";
+const base = "sidebar";
 const widths = {
-  expanded: "ui-sidebar--expanded",
-  collapsed: "ui-sidebar--collapsed",
+  expanded: "sidebar-expanded",
+  collapsed: "sidebar-collapsed",
 };
 
 export function Sidebar({
@@ -39,7 +39,7 @@ export function Sidebar({
   return (
     <SidebarContext.Provider value={{ collapsed }}>
       <nav className={classes} aria-label={title}>
-        <div className="ui-sidebar__content">{children}</div>
+        <div className="sidebar-content">{children}</div>
       </nav>
     </SidebarContext.Provider>
   );
@@ -54,10 +54,10 @@ export interface SidebarItemProps {
   className?: string;
 }
 
-const itemBase = "ui-sidebar-item";
-const itemActive = "ui-sidebar-item--active";
-const iconCls = "ui-sidebar-item__icon";
-const labelCls = "ui-sidebar-item__label";
+const itemBase = "sidebar-item";
+const itemActive = "sidebar-item-active";
+const iconCls = "sidebar-item-icon";
+const labelCls = "sidebar-item-label";
 
 export function SidebarItem({
   label,

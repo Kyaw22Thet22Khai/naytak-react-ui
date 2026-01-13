@@ -28,25 +28,25 @@
   transform: scale(1.03);
 }
 
-.tooltip--top {
+.tooltip-top {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
 }
 
-.tooltip--right {
+.tooltip-right {
   left: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(8px);
 }
 
-.tooltip--bottom {
+.tooltip-bottom {
   left: 50%;
   top: 100%;
   transform: translateX(-50%) translateY(8px);
 }
 
-.tooltip--left {
+.tooltip-left {
   right: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(-8px);

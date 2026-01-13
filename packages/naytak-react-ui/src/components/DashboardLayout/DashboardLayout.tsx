@@ -39,10 +39,10 @@ export function DashboardLayout({
   return (
     <div className={classes}>
       <Sidebar collapsed={collapsed}>{sidebar}</Sidebar>
-      <div className="ui-dashboard__main">
+      <div className="dashboard-main">
         <Navbar title={title}>{navbarActions}</Navbar>
         {breadcrumbItems && breadcrumbItems.length > 0 ? (
-          <div className="ui-dashboard__breadcrumb">
+          <div className="dashboard-breadcrumb">
             <Breadcrumb
               items={breadcrumbItems}
               separator={breadcrumbSeparator}
@@ -51,7 +51,7 @@ export function DashboardLayout({
             />
           </div>
         ) : breadcrumb ? (
-          <div className="ui-dashboard__breadcrumb">{breadcrumb}</div>
+          <div className="dashboard-breadcrumb">{breadcrumb}</div>
         ) : null}
         <Content>{children}</Content>
         <Footer>{footer}</Footer>

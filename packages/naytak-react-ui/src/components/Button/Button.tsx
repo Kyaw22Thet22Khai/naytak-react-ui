@@ -20,29 +20,29 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   radius?: ButtonRadius;
 }
 
-const base = "ui-btn";
+const base = "btn";
 const variants: Record<ButtonVariant, string> = {
-  primary: "ui-btn--primary",
-  secondary: "ui-btn--secondary",
-  ghost: "ui-btn--ghost",
-  success: "ui-btn--success",
-  warning: "ui-btn--warning",
-  danger: "ui-btn--danger",
-  info: "ui-btn--info",
-  dark: "ui-btn--dark",
-  light: "ui-btn--light",
+  primary: "btn-primary",
+  secondary: "btn-secondary",
+  ghost: "btn-ghost",
+  success: "btn-success",
+  warning: "btn-warning",
+  danger: "btn-danger",
+  info: "btn-info",
+  dark: "btn-dark",
+  light: "btn-light",
 };
 const sizes: Record<ButtonSize, string> = {
-  sm: "ui-btn--sm",
-  md: "ui-btn--md",
-  lg: "ui-btn--lg",
+  sm: "btn-sm",
+  md: "btn-md",
+  lg: "btn-lg",
 };
 const radii: Record<ButtonRadius, string> = {
-  none: "ui-btn--radius-none",
-  sm: "ui-btn--radius-sm",
-  md: "ui-btn--radius-md",
-  lg: "ui-btn--radius-lg",
-  full: "ui-btn--radius-full",
+  none: "btn-radius-none",
+  sm: "btn-radius-sm",
+  md: "btn-radius-md",
+  lg: "btn-radius-lg",
+  full: "btn-radius-full",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -62,7 +62,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variants[variant],
       sizes[size],
       radii[radius],
-      outlined ? "ui-btn--outline" : null,
+      outlined ? "btn-outline" : null,
       className,
     ]
       .filter(Boolean)

@@ -34,12 +34,12 @@ const sizeClass = (size: ModalSize | undefined) => {
   const s = size ?? "default";
   switch (s) {
     case "small":
-      return "ui-modal--sm";
+      return "modal-sm";
     case "large":
-      return "ui-modal--lg";
+      return "modal-lg";
     case "default":
     default:
-      return "ui-modal--md";
+      return "modal-md";
   }
 };
 
@@ -108,9 +108,9 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(function Modal(
   if (!rendered) return null;
 
   const rootCls = [
-    "ui-modal",
+    "modal",
     sizeClass(size),
-    `ui-modal--fx-${transition}`,
+    `modal-fx-${transition}`,
     exiting ? "is-exiting" : entering ? "is-entering" : null,
     className,
   ]
@@ -133,17 +133,17 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(function Modal(
         "--ui-modal-duration": `${transitionDuration}ms`,
       }}
       {...props}>
-      <div className="ui-modal__overlay" onClick={handleOverlayClick}>
-        <div className="ui-modal__content" onClick={stop}>
+      <div className="modal-overlay" onClick={handleOverlayClick}>
+        <div className="modal-content" onClick={stop}>
           {title ? (
-            <div className="ui-modal__header">
-              <div className="ui-modal__title" id={titleId}>
+            <div className="modal-header">
+              <div className="modal-title" id={titleId}>
                 {title}
               </div>
               {onClose ? (
                 <button
                   type="button"
-                  className="ui-modal__close"
+                  className="modal-close"
                   aria-label="Close"
                   onClick={onClose}>
                   ×
@@ -153,14 +153,14 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(function Modal(
           ) : onClose ? (
             <button
               type="button"
-              className="ui-modal__close ui-modal__close--noheader"
+              className="modal-close modal-close-noheader"
               aria-label="Close"
               onClick={onClose}>
               ×
             </button>
           ) : null}
-          <div className="ui-modal__body">{children}</div>
-          {footer ? <div className="ui-modal__footer">{footer}</div> : null}
+          <div className="modal-body">{children}</div>
+          {footer ? <div className="modal-footer">{footer}</div> : null}
         </div>
       </div>
     </div>

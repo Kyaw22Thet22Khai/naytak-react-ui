@@ -1,7 +1,7 @@
 /* Notched Input (fieldset/legend) */
 
 /* Wrapper */
-.ui-notched-field {
+.notched-field {
   font-family:
     system-ui,
     -apple-system,
@@ -10,7 +10,7 @@
 }
 
 /* Fieldset = outline */
-.ui-notched__fieldset {
+.notched-fieldset {
   background: #fff;
   border: 1.5px dotted #d1d5db;
   border-radius: 8px;
@@ -24,18 +24,18 @@
 }
 
 /* Focus state */
-.ui-notched__fieldset:focus-within {
+.notched-fieldset:focus-within {
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
 }
 
 /* Legend (notch) */
-.ui-notched__label {
+.notched-label {
   padding: 0 6px;
 }
 
 /* Label text */
-.ui-notched__label-text {
+.notched-label-text {
   background: #fff;
   color: #374151;
   font-size: 0.75rem;
@@ -44,12 +44,12 @@
 }
 
 /* Focus label */
-.ui-notched__fieldset:focus-within .ui-notched__label-text {
+.notched-fieldset:focus-within .notched-label-text {
   color: #2563eb;
 }
 
 /* Input inside notched */
-.ui-notched__fieldset .ui-input {
+.notched-fieldset .input {
   background: transparent;
   border: none;
   font-size: 0.875rem;
@@ -59,7 +59,7 @@
 }
 
 /* Select inside notched */
-.ui-notched__fieldset .ui-select {
+.notched-fieldset .select {
   background: transparent;
   border: none;
   font-size: 0.875rem;
@@ -69,53 +69,53 @@
 }
 
 /* Remove default input/select focus */
-.ui-notched__fieldset .ui-input:focus {
+.notched-fieldset .input:focus {
   box-shadow: none;
 }
 
-.ui-notched__fieldset .ui-select:focus {
+.notched-fieldset .select:focus {
   box-shadow: none;
 }
 
 /* ---------- Sizes ---------- */
-.ui-notched--sm .ui-notched__label-text {
+.notched-sm .notched-label-text {
   font-size: 0.7rem;
 }
 
-.ui-notched--sm .ui-input {
+.notched-sm .input {
   font-size: 0.75rem;
   padding: 0.375rem 0.5rem;
 }
 
-.ui-notched--sm .ui-select {
+.notched-sm .select {
   font-size: 0.75rem;
   padding: 0.375rem 0.5rem;
 }
 
-.ui-notched--md .ui-notched__label-text {
+.notched-md .notched-label-text {
   font-size: 0.75rem;
 }
 
-.ui-notched--md .ui-input {
+.notched-md .input {
   font-size: 0.875rem;
   padding: 0.5rem 0.75rem;
 }
 
-.ui-notched--md .ui-select {
+.notched-md .select {
   font-size: 0.875rem;
   padding: 0.5rem 0.75rem;
 }
 
-.ui-notched--lg .ui-notched__label-text {
+.notched-lg .notched-label-text {
   font-size: 0.85rem;
 }
 
-.ui-notched--lg .ui-input {
+.notched-lg .input {
   font-size: 1rem;
   padding: 0.625rem 1rem;
 }
 
-.ui-notched--lg .ui-select {
+.notched-lg .select {
   font-size: 1rem;
   padding: 0.625rem 1rem;
 }

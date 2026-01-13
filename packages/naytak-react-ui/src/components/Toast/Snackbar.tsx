@@ -45,7 +45,7 @@ const Snackbar: React.FC<SnackbarProps> = ({
   if (!open) return null;
 
   return (
-    <div className={`snackbar snackbar--${color} snackbar--${position}`}>
+    <div className={`snackbar snackbar-${color} snackbar-${position}`}>
       {message}
       <button className="snackbar-close" onClick={onClose} aria-label="Close">
         ×

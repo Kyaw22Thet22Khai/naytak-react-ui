@@ -6,7 +6,7 @@ export interface FooterProps {
 }
 
 export function Footer({ children, className }: FooterProps) {
-  const classes = ["ui-footer", className].filter(Boolean).join(" ");
+  const classes = ["footer", className].filter(Boolean).join(" ");
   return (
     <footer className={classes} role="contentinfo">
       {children}

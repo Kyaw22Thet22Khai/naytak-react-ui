@@ -60,8 +60,8 @@ const Pagination: React.FC<PaginationProps> = ({
     <nav
       className={[
         "pagination",
-        `pagination--${size}`,
-        `pagination--${shape}`,
+        size ? `pagination-${size}` : null,
+        shape ? `pagination-${shape}` : null,
         className,
       ]
         .filter(Boolean)
@@ -70,25 +70,25 @@ const Pagination: React.FC<PaginationProps> = ({
       {/* Previous */}
       <button
         type="button"
-        className="pagination__arrow"
+        className="pagination-arrow"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         aria-label="Previous page">
-        ‹
+        
       </button>
 
       {/* Pages */}
       {getPageNumbers().map((page, index) =>
         page === "dots" ? (
-          <span key={`dots-${index}`} className="pagination__dots">
+          <span key={`dots-${index}`} className="pagination-dots">
             …
           </span>
         ) : (
           <button
             key={page}
             type="button"
-            className={`pagination__page${
-              page === currentPage ? " pagination__page--active" : ""
+            className={`pagination-page${
+              page === currentPage ? " pagination-page-active" : ""
             }`}
             onClick={() => onPageChange(page)}
             aria-current={page === currentPage ? "page" : undefined}>
@@ -100,7 +100,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {/* Next */}
       <button
         type="button"
-        className="pagination__arrow"
+        className="pagination-arrow"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         aria-label="Next page">

@@ -33,23 +33,33 @@ export const Grid: React.FC<GridProps> = ({
   rowSpacing,
   columnSpacing,
 }) => {
-  const spacingClass = spacing ? `grid-spacing-${spacing}` : "";
+  const spacingClass =
+    spacing === 0.5
+      ? "grid-spacing-0-5"
+      : spacing
+        ? `grid-spacing-${spacing}`
+        : "";
   const rowSpacingClass = rowSpacing ? `grid-row-spacing-${rowSpacing}` : "";
   let colSpacingClasses: string[] = [];
   if (columnSpacing) {
+    const fix = (prefix: string, val: GridBreakpoint | undefined) =>
+      val === 0.5
+        ? `grid-col-spacing-${prefix}-0-5`
+        : val !== undefined
+          ? `grid-col-spacing-${prefix}-${val}`
+          : "";
     if (typeof columnSpacing === "object") {
-      if (columnSpacing.xs)
-        colSpacingClasses.push(`grid-col-spacing-xs-${columnSpacing.xs}`);
-      if (columnSpacing.sm)
-        colSpacingClasses.push(`grid-col-spacing-sm-${columnSpacing.sm}`);
-      if (columnSpacing.md)
-        colSpacingClasses.push(`grid-col-spacing-md-${columnSpacing.md}`);
-      if (columnSpacing.lg)
-        colSpacingClasses.push(`grid-col-spacing-lg-${columnSpacing.lg}`);
-      if (columnSpacing.xl)
-        colSpacingClasses.push(`grid-col-spacing-xl-${columnSpacing.xl}`);
+      if (columnSpacing.xs) colSpacingClasses.push(fix("xs", columnSpacing.xs));
+      if (columnSpacing.sm) colSpacingClasses.push(fix("sm", columnSpacing.sm));
+      if (columnSpacing.md) colSpacingClasses.push(fix("md", columnSpacing.md));
+      if (columnSpacing.lg) colSpacingClasses.push(fix("lg", columnSpacing.lg));
+      if (columnSpacing.xl) colSpacingClasses.push(fix("xl", columnSpacing.xl));
     } else {
-      colSpacingClasses.push(`grid-col-spacing-xs-${columnSpacing}`);
+      colSpacingClasses.push(
+        columnSpacing === 0.5
+          ? "grid-col-spacing-xs-0-5"
+          : `grid-col-spacing-xs-${columnSpacing}`
+      );
     }
   }
   const classes = [
@@ -93,7 +103,12 @@ export const GridItem: React.FC<GridItemProps> = ({
 }) => {
   const getColClass = (prefix: string, value?: number) =>
     value ? `grid-col-${prefix}-${value}` : "";
-  const spacingClass = spacing ? `grid-item-spacing-${spacing}` : "";
+  const spacingClass =
+    spacing === 0.5
+      ? "grid-item-spacing-0-5"
+      : spacing
+        ? `grid-item-spacing-${spacing}`
+        : "";
   const classes = [
     getColClass("xs", xs),
     getColClass("sm", sm),

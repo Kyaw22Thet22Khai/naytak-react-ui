@@ -33,9 +33,9 @@ const Badge: React.FC<BadgeProps> = ({
     <span
       className={[
         "badge",
-        `badge--${color}`,
-        `badge--${size}`,
-        `badge--${variant}`,
+        `badge-${color}`,
+        `badge-${size}`,
+        `badge-${variant}`,
         className,
       ]
         .filter(Boolean)

@@ -25,26 +25,22 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   ref
 ) {
   const autoId = useId();
-  const inputId = id ?? `ui-switch-${autoId}`;
+  const inputId = id ?? `switch-${autoId}`;
 
-  const fieldClasses = ["ui-field", containerClassName]
-    .filter(Boolean)
-    .join(" ");
+  const fieldClasses = ["field", containerClassName].filter(Boolean).join(" ");
   const wrapperClasses = [
-    "ui-switch",
-    size ? `ui-switch--${size}` : null,
+    "switch",
+    size ? `switch-${size}` : null,
     labelClassName,
   ]
     .filter(Boolean)
     .join(" ");
 
-  const inputClasses = ["ui-switch__input", className]
-    .filter(Boolean)
-    .join(" ");
+  const inputClasses = ["switch-input", className].filter(Boolean).join(" ");
 
   return (
     <div className={fieldClasses}>
-      <div className="ui-field__control">
+      <div className="field-control">
         <label className={wrapperClasses} htmlFor={inputId}>
           <input
             ref={ref}
@@ -54,8 +50,8 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
             className={inputClasses}
             {...props}
           />
-          <span className="ui-switch__track" aria-hidden="true" />
-          {label ? <span className="ui-switch__label">{label}</span> : null}
+          <span className="switch-track" aria-hidden="true" />
+          {label ? <span className="switch-label">{label}</span> : null}
         </label>
       </div>
     </div>

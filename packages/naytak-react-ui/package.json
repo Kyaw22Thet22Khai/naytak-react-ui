@@ -3,10 +3,10 @@
   "version": "0.1.1",
   "description": "Reusable React UI component library",
   "type": "module",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kyaw22Thet22Khai/naytak-react-ui.git"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

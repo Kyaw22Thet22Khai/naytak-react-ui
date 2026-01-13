@@ -1,26 +1,26 @@
 /* Radio */
-.ui-radio {
+.radio {
   accent-color: #2563eb;
   outline: none;
 }
 
-.ui-radio:focus-visible {
+.radio:focus-visible {
   border-radius: 0.375rem;
   box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
 }
 
 /* Sizes */
-.ui-radio--sm {
+.radio-sm {
   height: 0.875rem;
   width: 0.875rem;
 }
 
-.ui-radio--md {
+.radio-md {
   height: 1rem;
   width: 1rem;
 }
 
-.ui-radio--lg {
+.radio-lg {
   height: 1.25rem;
   width: 1.25rem;
 }

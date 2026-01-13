@@ -28,19 +28,19 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ref
   ) {
     const autoId = useId();
-    const inputId = id ?? `ui-checkbox-${autoId}`;
+    const inputId = id ?? `checkbox-${autoId}`;
 
     const fieldClasses = [
-      "ui-field",
-      inline ? "ui-field--inline" : null,
+      "field",
+      inline ? "field-inline" : null,
       containerClassName,
     ]
       .filter(Boolean)
       .join(" ");
 
     const inputClasses = [
-      "ui-checkbox",
-      size ? `ui-checkbox--${size}` : null,
+      "checkbox",
+      size ? `checkbox-${size}` : null,
       className,
     ]
       .filter(Boolean)
@@ -48,9 +48,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
     return (
       <div className={fieldClasses}>
-        <div className="ui-field__control">
+        <div className="field-control">
           <label
-            className={["ui-choice", labelClassName].filter(Boolean).join(" ")}
+            className={["choice", labelClassName].filter(Boolean).join(" ")}
             htmlFor={inputId}>
             <input
               ref={ref}

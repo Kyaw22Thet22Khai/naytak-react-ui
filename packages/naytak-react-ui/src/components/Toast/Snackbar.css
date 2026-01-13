@@ -13,57 +13,58 @@
 }
 
 /* Position Variants */
-.snackbar--top-right {
+
+.snackbar-top-right {
   inset: 32px 32px auto auto;
   transform: none;
 }
 
-.snackbar--top-center {
+.snackbar-top-center {
   inset: 32px auto auto 50%;
   transform: translateX(-50%);
 }
 
-.snackbar--top-left {
+.snackbar-top-left {
   inset: 32px auto auto 32px;
   transform: none;
 }
 
-.snackbar--bottom-right {
+.snackbar-bottom-right {
   inset: auto 32px 32px auto;
   transform: none;
 }
 
-.snackbar--bottom-center {
+.snackbar-bottom-center {
   inset: auto auto 32px 50%;
   transform: translateX(-50%);
 }
 
-.snackbar--bottom-left {
+.snackbar-bottom-left {
   inset: auto auto 32px 32px;
   transform: none;
 }
 
-.snackbar--primary {
+.snackbar-primary {
   background: #2563eb;
   color: #fff;
 }
 
-.snackbar--secondary {
+.snackbar-secondary {
   background: #64748b;
   color: #fff;
 }
 
-.snackbar--success {
+.snackbar-success {
   background: #22c55e;
   color: #fff;
 }
 
-.snackbar--danger {
+.snackbar-danger {
   background: #ef4444;
   color: #fff;
 }
 
-.snackbar--warning {
+.snackbar-warning {
   background: #f59e42;
   color: #fff;
 }

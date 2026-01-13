@@ -1,5 +1,5 @@
 /* Card */
-.ui-card {
+.card {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
@@ -11,56 +11,56 @@
     border-color 0.2s;
 }
 
-.ui-card--sm {
+.card-sm {
   padding: 0.75rem;
 }
 
-.ui-card--md {
+.card-md {
   padding: 1rem;
 }
 
-.ui-card--lg {
+.card-lg {
   padding: 1.25rem;
 }
 
-.ui-card__header {
+.card-header {
   margin-bottom: 0.5rem;
 }
 
-.ui-card__title {
+.card-title {
   font-size: 1rem;
   font-weight: 600;
 }
 
-.ui-card__subtitle {
+.card-subtitle {
   color: #6b7280;
   font-size: 0.875rem;
 }
 
-.ui-card__body {
+.card-body {
   font-size: 0.875rem;
 }
 
-.ui-card__footer {
+.card-footer {
   border-top: 1px solid #f3f4f6;
   margin-top: 0.75rem;
   padding-top: 0.5rem;
 }
 
 /* Card variants */
-.ui-card--outlined {
+.card-outlined {
   border-color: #d1d5db;
   box-shadow: none;
 }
 
-.ui-card--elevated {
+.card-elevated {
   border-color: transparent;
   box-shadow:
     0 8px 24px rgb(30 41 59 / 13%),
     0 3px 8px rgb(30 41 59 / 10%);
 }
 
-.ui-card--interactive:hover {
+.card-interactive:hover {
   border-color: #d1d5db;
   box-shadow:
     0 12px 32px rgb(30 41 59 / 16%),

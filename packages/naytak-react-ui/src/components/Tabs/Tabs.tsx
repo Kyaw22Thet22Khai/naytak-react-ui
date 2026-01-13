@@ -50,7 +50,7 @@ export function TabPanel({
       id={`tabpanel-${value}`}
       aria-labelledby={`tab-${value}`}
       hidden={!active}
-      className={["ui-tab-panel", className].filter(Boolean).join(" ")}>
+      className={["tab-panel", className].filter(Boolean).join(" ")}>
       {children}
     </div>
   );

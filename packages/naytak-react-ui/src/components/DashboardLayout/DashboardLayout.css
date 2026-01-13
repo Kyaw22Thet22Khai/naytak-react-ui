@@ -1,3 +1,8 @@
+/* Breadcrumb section */
+.dashboard-breadcrumb {
+  padding: 0 1.5rem 1rem;
+}
+
 /* Dashboard Layout */
 .ui-dashboard {
   background: #f3f4f6;
@@ -8,7 +13,7 @@
   padding: 0;
 }
 
-.ui-dashboard__main {
+.dashboard-main {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;

@@ -31,112 +31,112 @@
   transform: scale(0.98);
 }
 
-.badge--normal {
+.badge-normal {
   border-radius: 5px;
 }
 
-.badge--pill {
+.badge-pill {
   border-radius: 999px;
 }
 
-.badge--outline {
+.badge-outline {
   background: transparent !important;
   border-radius: 5px;
   box-shadow: none;
   box-sizing: border-box;
 }
 
-.badge--outline.badge--primary {
+.badge-outline.badge-primary {
   background: transparent !important;
   border: 1.5px solid #2563eb;
   color: #2563eb !important;
 }
 
-.badge--outline.badge--secondary {
+.badge-outline.badge-secondary {
   background: transparent !important;
   border: 1.5px solid #64748b;
   color: #64748b !important;
 }
 
-.badge--outline.badge--success {
+.badge-outline.badge-success {
   background: transparent !important;
   border: 1.5px solid #22c55e;
   color: #22c55e !important;
 }
 
-.badge--outline.badge--warning {
+.badge-outline.badge-warning {
   background: transparent !important;
   border: 1.5px solid #f59e42;
   color: #f59e42 !important;
 }
 
-.badge--outline.badge--danger {
+.badge-outline.badge-danger {
   background: transparent !important;
   border: 1.5px solid #ef4444;
   color: #ef4444 !important;
 }
 
-.badge--outline.badge--dark {
+.badge-outline.badge-dark {
   background: transparent !important;
   border: 1.5px solid #222;
   color: #222 !important;
 }
 
-.badge--outline.badge--light {
+.badge-outline.badge-light {
   background: transparent !important;
   border: 1.5px solid #f3f4f6;
   color: #f3f4f6 !important;
 }
 
-.badge--sm {
+.badge-sm {
   font-size: 0.75em;
   padding: 0.15em 0.5em;
 }
 
-.badge--md {
+.badge-md {
   font-size: 0.875em;
   padding: 0.25em 0.75em;
   padding-bottom: 0.55em;
 }
 
-.badge--lg {
+.badge-lg {
   font-size: 1.1em;
   padding: 0.35em 1em;
 }
 
-.badge--primary {
+.badge-primary {
   background: linear-gradient(90deg, #2563eb 60%, #1d4ed8 100%);
   color: #fff;
 }
 
-.badge--secondary {
+.badge-secondary {
   background: linear-gradient(90deg, #64748b 60%, #334155 100%);
   border: 1.5px solid #334155;
   box-sizing: border-box;
   color: #e2e8f0;
 }
 
-.badge--success {
+.badge-success {
   background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
   color: #fff;
 }
 
-.badge--warning {
+.badge-warning {
   background: linear-gradient(90deg, #f59e42 60%, #fbbf24 100%);
   color: #fff;
 }
 
-.badge--danger {
+.badge-danger {
   background: linear-gradient(90deg, #ef4444 60%, #b91c1c 100%);
   color: #fff;
 }
 
-.badge--dark {
+.badge-dark {
   background: linear-gradient(90deg, #222 60%, #0f172a 100%);
   color: #f1f5f9;
 }
 
-.badge--light {
+.badge-light {
   background: linear-gradient(90deg, #f3f4f6 60%, #e5e7eb 100%);
   color: #222;
 }

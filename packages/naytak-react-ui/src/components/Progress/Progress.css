@@ -54,33 +54,32 @@
   transform: translate(-50%, -50%);
 }
 
-/* Color variants */
-.progress--primary .progress-linear-bar,
-.progress--primary .progress-circular-bar {
+.progress-primary .progress-linear-bar,
+.progress-primary .progress-circular-bar {
   background: linear-gradient(90deg, #2563eb 60%, #1d4ed8 100%);
   stroke: #2563eb;
 }
 
-.progress--secondary .progress-linear-bar,
-.progress--secondary .progress-circular-bar {
+.progress-secondary .progress-linear-bar,
+.progress-secondary .progress-circular-bar {
   background: linear-gradient(90deg, #64748b 60%, #334155 100%);
   stroke: #64748b;
 }
 
-.progress--success .progress-linear-bar,
-.progress--success .progress-circular-bar {
+.progress-success .progress-linear-bar,
+.progress-success .progress-circular-bar {
   background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
   stroke: #22c55e;
 }
 
-.progress--danger .progress-linear-bar,
-.progress--danger .progress-circular-bar {
+.progress-danger .progress-linear-bar,
+.progress-danger .progress-circular-bar {
   background: linear-gradient(90deg, #ef4444 60%, #b91c1c 100%);
   stroke: #ef4444;
 }
 
-.progress--warning .progress-linear-bar,
-.progress--warning .progress-circular-bar {
+.progress-warning .progress-linear-bar,
+.progress-warning .progress-circular-bar {
   background: linear-gradient(90deg, #f59e42 60%, #fbbf24 100%);
   stroke: #f59e42;
 }

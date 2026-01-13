@@ -24,7 +24,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       tabIndex={0}>
       {children}
       {visible && (
-        <div className={`tooltip tooltip--${position}`}>{content}</div>
+        <div className={`tooltip tooltip-${position}`}>{content}</div>
       )}
     </div>
   );

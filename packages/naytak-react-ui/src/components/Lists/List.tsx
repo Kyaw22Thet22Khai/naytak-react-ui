@@ -7,7 +7,5 @@ export interface ListProps {
 }
 
 export const List: React.FC<ListProps> = ({ children, className }) => (
-  <ul className={className ? `ntk-list ${className}` : "ntk-list"}>
-    {children}
-  </ul>
+  <ul className={className ? `list ${className}` : "list"}>{children}</ul>
 );

@@ -1,5 +1,5 @@
 /* Navbar */
-.ui-navbar {
+.navbar {
   align-items: center;
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
@@ -13,12 +13,12 @@
   z-index: 10;
 }
 
-.ui-navbar__title {
+.navbar-title {
   font-size: 1rem;
   font-weight: 600;
 }
 
-.ui-navbar__actions {
+.navbar-actions {
   align-items: center;
   display: inline-flex;
   gap: 0.5rem;

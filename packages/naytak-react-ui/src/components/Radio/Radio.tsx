@@ -27,29 +27,25 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   ref
 ) {
   const autoId = useId();
-  const inputId = id ?? `ui-radio-${autoId}`;
+  const inputId = id ?? `radio-${autoId}`;
 
   const fieldClasses = [
-    "ui-field",
-    inline ? "ui-field--inline" : null,
+    "field",
+    inline ? "field-inline" : null,
     containerClassName,
   ]
     .filter(Boolean)
     .join(" ");
 
-  const inputClasses = [
-    "ui-radio",
-    size ? `ui-radio--${size}` : null,
-    className,
-  ]
+  const inputClasses = ["radio", size ? `radio-${size}` : null, className]
     .filter(Boolean)
     .join(" ");
 
   return (
     <div className={fieldClasses}>
-      <div className="ui-field__control">
+      <div className="field-control">
         <label
-          className={["ui-choice", labelClassName].filter(Boolean).join(" ")}
+          className={["choice", labelClassName].filter(Boolean).join(" ")}
           htmlFor={inputId}>
           <input
             ref={ref}
@@ -58,7 +54,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
             className={inputClasses}
             {...props}
           />
-          {label ? <span className="ui-choice__label">{label}</span> : null}
+          {label ? <span className="choice-label">{label}</span> : null}
         </label>
       </div>
     </div>
