@@ -95,22 +95,26 @@ export default function Page() {
 Use `Container` to wrap any content. By default it centers content with a max-width; set `fluid` to span full width.
 
 ```tsx
-import { Container } from "@naytak/react-ui";
+import { Grid, GridItem } from "@naytak/react-ui";
 
 export default function Sections() {
   return (
     <>
       {/* Default: centered with max-width */}
-      <Container>
-        <h2>Constrained Section</h2>
-        <p>Centered with a readable maximum width.</p>
-      </Container>
+      <Grid container>
+        <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+          <h2>Constrained Section</h2>
+          <p>Centered with a readable maximum width.</p>
+        </GridItem>
+      </Grid>
 
       {/* Fluid: full-width */}
-      <Container fluid>
-        <h2>Full Width Banner</h2>
-        <p>Stretches across the entire viewport.</p>
-      </Container>
+      <Grid container fluid>
+        <GridItem xs={12} md={2} lg={2} spacing={0.5}>
+          <h2>Full Width Banner</h2>
+          <p>Stretches across the entire viewport.</p>
+        </GridItem>
+      </Grid>
     </>
   );
 }
@@ -122,10 +126,10 @@ Import the library’s bundled styles once in your app. Choose either export:
 
 ```ts
 // Preferred consolidated CSS
-import "@naytak/react-ui/index.css";
+import "naytak-react-ui/index.css";
 
 // Compatibility alias (same content)
-import "@naytak/react-ui/styles.css";
+import "naytak-react-ui/styles.css";
 ```
 
 Component-level CSS is bundled via the library entry, so a single import is sufficient.
