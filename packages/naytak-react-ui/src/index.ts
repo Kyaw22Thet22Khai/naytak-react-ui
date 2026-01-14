@@ -1,3 +1,4 @@
+export { DateTimePicker } from "./components/DateTimePicker/DateTimePicker";
 export { TableHead, TableBody } from "./components/Table/Table";
 export type { TableHeadProps, TableBodyProps } from "./components/Table/Table";
 export { Table } from "./components/Table/Table";
@@ -87,6 +88,11 @@ export type { BoxProps } from "./components/Box/Box";
 
 export { List } from "./components/Lists/List";
 export { ListItem } from "./components/Lists/ListItem";
+export { InputGroup, InputGroupAddon } from "./components/Input/InputGroup";
+export type {
+  InputGroupProps,
+  InputGroupAddonProps,
+} from "./components/Input/InputGroup";
 
 // CSS imports (scoped per component)
 import "./shared.css";
@@ -119,3 +125,5 @@ import "./components/Avatar/Avatar.css";
 import "./components/Badge/Badge.css";
 import "./components/Table/Table.css";
 import "./components/Lists/List.css";
+import "./components/Input/InputGroup.css";
+import "./components/DateTimePicker/DateTimePicker.css";

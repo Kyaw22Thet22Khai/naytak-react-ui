@@ -125,12 +125,12 @@ export function Tabs({
   };
 
   return (
-    <div className={["ui-tabs", className].filter(Boolean).join(" ")}>
+    <div className={["tabs", className].filter(Boolean).join(" ")}>
       {/* Tab List */}
       <div
         role="tablist"
         aria-orientation="horizontal"
-        className="ui-tab-list"
+        className="tab-list"
         tabIndex={0}
         onKeyDown={handleKeyDown}>
         {items.map((tab) => {
@@ -147,9 +147,9 @@ export function Tabs({
               aria-controls={`tabpanel-${tab.value}`}
               tabIndex={isActive ? 0 : -1}
               className={[
-                "ui-tab",
-                isActive && "ui-tab--active",
-                tab.disabled && "ui-tab--disabled",
+                "tab",
+                isActive && "tab-active",
+                tab.disabled && "tab-disabled",
               ]
                 .filter(Boolean)
                 .join(" ")}

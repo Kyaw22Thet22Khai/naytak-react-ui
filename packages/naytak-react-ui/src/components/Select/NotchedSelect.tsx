@@ -16,15 +16,15 @@ export const NotchedSelect = forwardRef<HTMLSelectElement, NotchedSelectProps>(
     ref
   ) {
     const fieldsetCls = [
-      "ui-notched__fieldset",
-      size ? `ui-notched--${size}` : null,
+      "ui-notched-fieldset",
+      size ? `ui-notched-${size}` : null,
     ]
       .filter(Boolean)
       .join(" ");
 
     const selectCls = [
       "ui-select",
-      size ? `ui-select--${size}` : null,
+      size ? `ui-select-${size}` : null,
       className,
     ]
       .filter(Boolean)
@@ -33,8 +33,8 @@ export const NotchedSelect = forwardRef<HTMLSelectElement, NotchedSelectProps>(
     return (
       <div className="ui-notched-field">
         <fieldset className={fieldsetCls}>
-          <legend className="ui-notched__label">
-            <span className="ui-notched__label-text">{label}</span>
+          <legend className="ui-notched-label">
+            <span className="ui-notched-label-text">{label}</span>
           </legend>
           <select ref={ref} className={selectCls} {...props}>
             {children}

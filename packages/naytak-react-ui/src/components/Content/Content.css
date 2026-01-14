@@ -3,8 +3,12 @@
   background: #fff;
   border-radius: 0;
   box-shadow: none;
-  flex: 1 1 auto;
+  flex: 1 1 0%;
+  margin-bottom: var(--footer-height, 48px);
+  margin-top: calc(var(--navbar-height, 56px) + var(--breadcrumb-height, 40px));
+  min-height: 0;
   overflow: hidden;
+  overflow-y: auto;
   padding: 1.5rem;
   text-align: left;
 }

@@ -57,20 +57,18 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             {label}
           </label>
         ) : null}
-        <div className="field-control">
-          <select ref={ref} className={selectClasses} {...props}>
-            {options
-              ? options.map((opt) => (
-                  <option
-                    key={opt.value}
-                    value={opt.value}
-                    disabled={opt.disabled}>
-                    {opt.label}
-                  </option>
-                ))
-              : children}
-          </select>
-        </div>
+        <select ref={ref} className={selectClasses} {...props}>
+          {options
+            ? options.map((opt) => (
+                <option
+                  key={opt.value}
+                  value={opt.value}
+                  disabled={opt.disabled}>
+                  {opt.label}
+                </option>
+              ))
+            : children}
+        </select>
       </div>
     );
   }

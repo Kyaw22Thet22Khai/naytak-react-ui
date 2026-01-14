@@ -1,7 +1,18 @@
 /* Breadcrumb (kebab-case) */
 .breadcrumb {
-  color: #64748b;
+  align-items: center;
+  background: #e4e4e4;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 3%);
+  color: #fff;
+  display: flex;
+  height: var(--breadcrumb-height, 40px);
+  left: 255px;
+  padding-left: 10px;
+  position: fixed;
+  right: 0;
+  top: var(--navbar-height, 56px);
   width: 100%;
+  z-index: 99;
 }
 
 .breadcrumb-md {

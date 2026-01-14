@@ -1,23 +1,60 @@
-/* Breadcrumb section */
-.dashboard-breadcrumb {
-  padding: 0 1.5rem 1rem;
-}
-
-/* Dashboard Layout */
-.ui-dashboard {
-  background: #f3f4f6;
+/* Layout for fixed navbar, breadcrumb, footer, and scrollable content */
+.dashboard {
   display: flex;
-  gap: 0;
   height: 100vh;
   overflow: hidden;
-  padding: 0;
+  width: 100vw;
 }
 
 .dashboard-main {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   flex-direction: column;
   height: 100vh;
   min-width: 0;
-  overflow: hidden;
+  position: relative;
+}
+
+.dashboard-navbar {
+  left: 255px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: auto;
+  z-index: 100;
+}
+
+.dashboard-breadcrumb {
+  align-items: center;
+  background: #c3c3c3;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 3%);
+  display: flex;
+  height: var(--breadcrumb-height, 40px);
+  left: 255px;
+  position: fixed;
+  right: 0;
+  top: var(--navbar-height, 56px);
+  z-index: 99;
+}
+
+.dashboard-footer {
+  align-items: center;
+  background: #fff;
+  bottom: 0;
+  box-shadow: 0 -1px 0 rgb(0 0 0 / 3%);
+  display: flex;
+  height: var(--footer-height, 48px);
+  left: 255px;
+  padding: 0 24px;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+}
+
+@media (width <= 900px) {
+  .dashboard-navbar,
+  .dashboard-breadcrumb,
+  .dashboard-footer {
+    left: 0 !important;
+  }
 }

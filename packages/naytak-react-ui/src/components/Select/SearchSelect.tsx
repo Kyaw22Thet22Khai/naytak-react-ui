@@ -63,8 +63,8 @@ export const SearchSelect = forwardRef<HTMLInputElement, SearchSelectProps>(
       .join(" ");
     const inputClasses = [
       "ui-input",
-      size ? `ui-input--${size}` : null,
-      clearable && hasValue ? "ui-input--icon-end" : null,
+      size ? `ui-input-${size}` : null,
+      clearable && hasValue ? "ui-input-icon-end" : null,
       className,
     ]
       .filter(Boolean)
@@ -91,43 +91,94 @@ export const SearchSelect = forwardRef<HTMLInputElement, SearchSelectProps>(
       innerRef.current.focus();
     };
 
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [filteredOptions, setFilteredOptions] = useState(options);
+
+    const handleInputDropdown: React.FormEventHandler<HTMLInputElement> = (
+      e
+    ) => {
+      handleInput(e);
+      const val = e.currentTarget.value.toLowerCase();
+      setFilteredOptions(
+        options.filter(
+          (o) =>
+            o.value.toLowerCase().includes(val) ||
+            (typeof o.label === "string" && o.label.toLowerCase().includes(val))
+        )
+      );
+      setShowDropdown(true);
+    };
+
+    const handleOptionClick = (value: string) => {
+      if (!innerRef.current) return;
+      innerRef.current.value = value;
+      setHasValue(true);
+      setShowDropdown(false);
+      // Fire change event
+      const ev = new Event("input", { bubbles: true });
+      innerRef.current.dispatchEvent(ev);
+      onChange?.({
+        ...({} as React.ChangeEvent<HTMLInputElement>),
+        target: innerRef.current,
+        currentTarget: innerRef.current,
+      });
+    };
+
+    const handleBlur = (
+      e: React.FocusEvent<HTMLInputElement | HTMLDivElement>
+    ) => {
+      setTimeout(() => setShowDropdown(false), 120);
+      props.onBlur?.(e as any);
+    };
+
     return (
-      <div className={fieldClasses}>
+      <div className={fieldClasses} style={{ position: "relative" }}>
         {label ? (
           <label
-            className={["ui-field__label", labelClassName]
+            className={["ui-field-label", labelClassName]
               .filter(Boolean)
               .join(" ")}>
             {label}
           </label>
         ) : null}
-        <div className="ui-field__control">
+        <div className="ui-field-control">
           <input
             ref={innerRef}
             id={inputId}
-            list={listId}
             className={inputClasses}
-            onInput={handleInput}
+            onInput={handleInputDropdown}
             onChange={handleChange}
+            onBlur={handleBlur}
+            autoComplete="off"
             {...props}
           />
           {clearable && (
             <button
               type="button"
               aria-label="Clear"
-              className="ui-input__action ui-input__action--end"
+              className="ui-input-action ui-input-action-end"
               onClick={handleClear}
               style={{ visibility: hasValue ? "visible" : "hidden" }}>
               ×
             </button>
           )}
-          <datalist id={listId}>
-            {options.map((o) => (
-              <option key={o.value} value={o.value}>
-                {typeof o.label === "string" ? o.label : undefined}
-              </option>
-            ))}
-          </datalist>
+          {showDropdown && filteredOptions.length > 0 && (
+            <div
+              className="ui-searchselect-dropdown"
+              tabIndex={-1}
+              onMouseDown={(e) => e.preventDefault()}>
+              {filteredOptions.map((o) => (
+                <button
+                  type="button"
+                  key={o.value}
+                  className="ui-searchselect-option"
+                  onClick={() => handleOptionClick(o.value)}
+                  aria-selected={false}>
+                  {o.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     );

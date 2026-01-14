@@ -22,15 +22,18 @@ import {
   Progress,
   TableHead,
   TableBody,
+  InputGroup,
   Pagination,
   AvatarGroup,
   SidebarItem,
   NotchedInput,
   SearchSelect,
   NotchedSelect,
+  DateTimePicker,
+  InputGroupAddon,
   DashboardLayout,
   TablePagination,
-} from "@naytak/react-ui";
+} from "naytak-react-ui";
 
 export default function App() {
   // Snackbar state
@@ -54,6 +57,7 @@ export default function App() {
     | "box"
     | "Lists"
     | "Typography"
+    | "DateTimePicker"
   >("home");
   const [openSm, setOpenSm] = useState(false);
   const [openMd, setOpenMd] = useState(false);
@@ -102,10 +106,276 @@ export default function App() {
         return [...base, { label: "Box" }];
       case "Lists":
         return [...base, { label: "Lists" }];
+      case "DateTimePicker":
+        return [...base, { label: "DateTimePicker" }];
       default:
         return base;
     }
   })();
+
+  const COLOR_PALETTES = [
+    {
+      name: "Red",
+      prefix: "red",
+      shades: [
+        { n: 50, hex: "#ffebee" },
+        { n: 100, hex: "#ffcdd2" },
+        { n: 200, hex: "#ef9a9a" },
+        { n: 300, hex: "#e57373" },
+        { n: 400, hex: "#ef5350" },
+        { n: 500, hex: "#f44336" },
+        { n: 600, hex: "#e53935" },
+        { n: 700, hex: "#d32f2f" },
+        { n: 800, hex: "#c62828" },
+        { n: 900, hex: "#b71c1c" },
+      ],
+    },
+    {
+      name: "Pink",
+      prefix: "pink",
+      shades: [
+        { n: 50, hex: "#fce4ec" },
+        { n: 100, hex: "#f8bbd0" },
+        { n: 200, hex: "#f48fb1" },
+        { n: 300, hex: "#f06292" },
+        { n: 400, hex: "#ec407a" },
+        { n: 500, hex: "#e91e63" },
+        { n: 600, hex: "#d81b60" },
+        { n: 700, hex: "#c2185b" },
+        { n: 800, hex: "#ad1457" },
+        { n: 900, hex: "#880e4f" },
+      ],
+    },
+    {
+      name: "Orange",
+      prefix: "orange",
+      shades: [
+        { n: 50, hex: "#fff3e0" },
+        { n: 100, hex: "#ffe0b2" },
+        { n: 200, hex: "#ffcc80" },
+        { n: 300, hex: "#ffb74d" },
+        { n: 400, hex: "#ffa726" },
+        { n: 500, hex: "#ff9800" },
+        { n: 600, hex: "#fb8c00" },
+        { n: 700, hex: "#f57c00" },
+        { n: 800, hex: "#ef6c00" },
+        { n: 900, hex: "#e65100" },
+      ],
+    },
+    {
+      name: "Yellow",
+      prefix: "yellow",
+      shades: [
+        { n: 50, hex: "#fffde7" },
+        { n: 100, hex: "#fff9c4" },
+        { n: 200, hex: "#fff59d" },
+        { n: 300, hex: "#fff176" },
+        { n: 400, hex: "#ffee58" },
+        { n: 500, hex: "#ffeb3b" },
+        { n: 600, hex: "#fdd835" },
+        { n: 700, hex: "#fbc02d" },
+        { n: 800, hex: "#f9a825" },
+        { n: 900, hex: "#f57f17" },
+      ],
+    },
+    {
+      name: "Green",
+      prefix: "green",
+      shades: [
+        { n: 50, hex: "#e8f5e9" },
+        { n: 100, hex: "#c8e6c9" },
+        { n: 200, hex: "#a5d6a7" },
+        { n: 300, hex: "#81c784" },
+        { n: 400, hex: "#66bb6a" },
+        { n: 500, hex: "#4caf50" },
+        { n: 600, hex: "#43a047" },
+        { n: 700, hex: "#388e3c" },
+        { n: 800, hex: "#2e7d32" },
+        { n: 900, hex: "#1b5e20" },
+      ],
+    },
+    {
+      name: "Teal",
+      prefix: "teal",
+      shades: [
+        { n: 50, hex: "#e0f2f1" },
+        { n: 100, hex: "#b2dfdb" },
+        { n: 200, hex: "#80cbc4" },
+        { n: 300, hex: "#4db6ac" },
+        { n: 400, hex: "#26a69a" },
+        { n: 500, hex: "#009688" },
+        { n: 600, hex: "#00897b" },
+        { n: 700, hex: "#00796b" },
+        { n: 800, hex: "#00695c" },
+        { n: 900, hex: "#004d40" },
+      ],
+    },
+    {
+      name: "Cyan",
+      prefix: "cyan",
+      shades: [
+        { n: 50, hex: "#e0f7fa" },
+        { n: 100, hex: "#b2ebf2" },
+        { n: 200, hex: "#80deea" },
+        { n: 300, hex: "#4dd0e1" },
+        { n: 400, hex: "#26c6da" },
+        { n: 500, hex: "#00bcd4" },
+        { n: 600, hex: "#00acc1" },
+        { n: 700, hex: "#0097a7" },
+        { n: 800, hex: "#00838f" },
+        { n: 900, hex: "#006064" },
+      ],
+    },
+    {
+      name: "Blue",
+      prefix: "blue",
+      shades: [
+        { n: 50, hex: "#e3f2fd" },
+        { n: 100, hex: "#bbdefb" },
+        { n: 200, hex: "#90caf9" },
+        { n: 300, hex: "#64b5f6" },
+        { n: 400, hex: "#42a5f5" },
+        { n: 500, hex: "#2196f3" },
+        { n: 600, hex: "#1e88e5" },
+        { n: 700, hex: "#1976d2" },
+        { n: 800, hex: "#1565c0" },
+        { n: 900, hex: "#0d47a1" },
+      ],
+    },
+    {
+      name: "Lime",
+      prefix: "lime",
+      shades: [
+        { n: 50, hex: "#f9fbe7" },
+        { n: 100, hex: "#f0f4c3" },
+        { n: 200, hex: "#e6ee9c" },
+        { n: 300, hex: "#dce775" },
+        { n: 400, hex: "#d4e157" },
+        { n: 500, hex: "#cddc39" },
+        { n: 600, hex: "#c0ca33" },
+        { n: 700, hex: "#afb42b" },
+        { n: 800, hex: "#9e9d24" },
+        { n: 900, hex: "#827717" },
+      ],
+    },
+    {
+      name: "Brown",
+      prefix: "brown",
+      shades: [
+        { n: 50, hex: "#efebe9" },
+        { n: 100, hex: "#d7ccc8" },
+        { n: 200, hex: "#bcaaa4" },
+        { n: 300, hex: "#a1887f" },
+        { n: 400, hex: "#8d6e63" },
+        { n: 500, hex: "#795548" },
+        { n: 600, hex: "#6d4c41" },
+        { n: 700, hex: "#5d4037" },
+        { n: 800, hex: "#4e342e" },
+        { n: 900, hex: "#3e2723" },
+      ],
+    },
+    {
+      name: "Gray",
+      prefix: "gray",
+      shades: [
+        { n: 50, hex: "#fafafa" },
+        { n: 100, hex: "#f5f5f5" },
+        { n: 200, hex: "#eeeeee" },
+        { n: 300, hex: "#e0e0e0" },
+        { n: 400, hex: "#bdbdbd" },
+        { n: 500, hex: "#9e9e9e" },
+        { n: 600, hex: "#757575" },
+        { n: 700, hex: "#616161" },
+        { n: 800, hex: "#424242" },
+        { n: 900, hex: "#212121" },
+      ],
+    },
+    {
+      name: "Sky",
+      prefix: "sky",
+      shades: [
+        { n: 50, hex: "#e1f5fe" },
+        { n: 100, hex: "#b3e5fc" },
+        { n: 200, hex: "#81d4fa" },
+        { n: 300, hex: "#4fc3f7" },
+        { n: 400, hex: "#29b6f6" },
+        { n: 500, hex: "#03a9f4" },
+        { n: 600, hex: "#039be5" },
+        { n: 700, hex: "#0288d1" },
+        { n: 800, hex: "#0277bd" },
+        { n: 900, hex: "#01579b" },
+      ],
+    },
+    {
+      name: "Violet",
+      prefix: "violet",
+      shades: [
+        { n: 50, hex: "#f3e5f5" },
+        { n: 100, hex: "#e1bee7" },
+        { n: 200, hex: "#ce93d8" },
+        { n: 300, hex: "#ba68c8" },
+        { n: 400, hex: "#ab47bc" },
+        { n: 500, hex: "#9c27b0" },
+        { n: 600, hex: "#8e24aa" },
+        { n: 700, hex: "#7b1fa2" },
+        { n: 800, hex: "#6a1b9a" },
+        { n: 900, hex: "#4a148c" },
+      ],
+    },
+    {
+      name: "Fuchsia",
+      prefix: "fuchsia",
+      shades: [
+        { n: 50, hex: "#fce4ec" },
+        { n: 100, hex: "#f8bbd0" },
+        { n: 200, hex: "#f48fb1" },
+        { n: 300, hex: "#f06292" },
+        { n: 400, hex: "#ec407a" },
+        { n: 500, hex: "#e040fb" },
+        { n: 600, hex: "#d500f9" },
+        { n: 700, hex: "#aa00ff" },
+        { n: 800, hex: "#8e24aa" },
+        { n: 900, hex: "#6a1b9a" },
+      ],
+    },
+  ];
+
+  function ColorPaletteGrid() {
+    return (
+      <Grid container fluid>
+        {COLOR_PALETTES.map((palette) => (
+          <GridItem key={palette.name} xs={12} sm={6} md={4} lg={3} spacing={2}>
+            <div style={{ fontWeight: 600, marginBottom: 8 }}>
+              {palette.name}
+            </div>
+            <div>
+              {palette.shades.map((shade) => (
+                <div
+                  key={shade.n}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    height: 36,
+                    background: shade.hex,
+                    color: shade.n > 400 ? "#fff" : "#222",
+                    padding: "0 12px",
+                    fontFamily: "monospace",
+                    fontSize: 15,
+                    borderRadius: 4,
+                    marginBottom: 2,
+                    boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+                  }}>
+                  <span style={{ width: 32 }}>{shade.n}</span>
+                  <span style={{ flex: 1 }}></span>
+                  <span>{shade.hex}</span>
+                </div>
+              ))}
+            </div>
+          </GridItem>
+        ))}
+      </Grid>
+    );
+  }
 
   return (
     <DashboardLayout
@@ -199,6 +469,11 @@ export default function App() {
             label="Lists"
             active={page === "Lists"}
             onClick={() => setPage("Lists")}
+          />
+          <SidebarItem
+            label="DateTimePicker"
+            active={page === "DateTimePicker"}
+            onClick={() => setPage("DateTimePicker")}
           />
         </>
       }
@@ -389,130 +664,105 @@ export default function App() {
         </div>
       )}
       {page === "inputs" && (
-        <div style={{ display: "grid", gap: 16, maxWidth: 1200 }}>
+        <>
           <h2 style={{ margin: 0 }}>Input Demo</h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: 24,
-              alignItems: "start",
-            }}>
-            {/* Default column */}
-            <div>
-              <h3 style={{ margin: "0 0 12px" }}>Default</h3>
-              <div style={{ display: "grid", gap: 12 }}>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Simple</h4>
-                  <Input
-                    label="Email"
-                    type="email"
-                    placeholder="you@example.com"
-                    size="md"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Notched</h4>
-                  <NotchedInput
-                    label="Username"
-                    placeholder="Enter username"
-                    size="md"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Group</h4>
-                  <Input
-                    label="Website"
-                    addonBefore="https://"
-                    addonAfter=".com"
-                    placeholder="example"
-                    size="md"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Inline</h4>
-                  <Input label="Name" inline placeholder="Jane Doe" size="md" />
-                </div>
-              </div>
-            </div>
-
-            {/* Small column */}
-            <div>
-              <h3 style={{ margin: "0 0 12px" }}>Small</h3>
-              <div style={{ display: "grid", gap: 12 }}>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Simple</h4>
-                  <Input
-                    label="Email"
-                    type="email"
-                    placeholder="you@example.com"
-                    size="sm"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Notched</h4>
-                  <NotchedInput
-                    label="Username"
-                    placeholder="Enter username"
-                    size="sm"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Group</h4>
-                  <Input
-                    label="Website"
-                    addonBefore="https://"
-                    addonAfter=".com"
-                    placeholder="example"
-                    size="sm"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Inline</h4>
-                  <Input label="Name" inline placeholder="Jane Doe" size="sm" />
-                </div>
-              </div>
-            </div>
-
-            {/* Large column */}
-            <div>
-              <h3 style={{ margin: "0 0 12px" }}>Large</h3>
-              <div style={{ display: "grid", gap: 12 }}>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Simple</h4>
-                  <Input
-                    label="Email"
-                    type="email"
-                    placeholder="you@example.com"
-                    size="lg"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Notched</h4>
-                  <NotchedInput
-                    label="Username"
-                    placeholder="Enter username"
-                    size="lg"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Group</h4>
-                  <Input
-                    label="Website"
-                    addonBefore="https://"
-                    addonAfter=".com"
-                    placeholder="example"
-                    size="lg"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ margin: "0 0 6px" }}>Inline</h4>
-                  <Input label="Name" inline placeholder="Jane Doe" size="lg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <Grid container fluid rowSpacing={2}>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Small Input</h3>
+              <Input
+                label="Name"
+                placeholder="Enter your name"
+                size="sm"
+                className="form-control"
+              />
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Default Input</h3>
+              <Input
+                label="Name"
+                placeholder="Enter your name"
+                size="md"
+                className="form-control"
+              />
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Large Input</h3>
+              <Input
+                label="Name"
+                placeholder="Enter your name"
+                size="lg"
+                className="form-control"
+              />
+            </GridItem>
+          </Grid>
+          <Grid container fluid rowSpacing={2}>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Small Notched Input</h3>
+              <NotchedInput
+                label="Username"
+                placeholder="Enter username"
+                size="sm"
+                className="form-control"
+              />
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Default Notched Input</h3>
+              <NotchedInput
+                label="Username"
+                placeholder="Enter username"
+                size="md"
+                className="form-control"
+              />
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Large Notched Input</h3>
+              <NotchedInput
+                label="Username"
+                placeholder="Enter username"
+                size="lg"
+                className="form-control"
+              />
+            </GridItem>
+          </Grid>
+          <Grid container fluid rowSpacing={2}>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Small Input Group</h3>
+              <InputGroup size="sm">
+                <InputGroupAddon position="prefix">@</InputGroupAddon>
+                <Input
+                  placeholder="username"
+                  className="form-control"
+                  size="sm"
+                />
+                <InputGroupAddon position="suffix">.com</InputGroupAddon>
+              </InputGroup>
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Default Input Group</h3>
+              <InputGroup size="md">
+                <InputGroupAddon position="prefix">https://</InputGroupAddon>
+                <Input
+                  placeholder="example"
+                  className="form-control"
+                  size="md"
+                />
+                <InputGroupAddon position="suffix">.com</InputGroupAddon>
+              </InputGroup>
+            </GridItem>
+            <GridItem xs={12} md={4} lg={4} spacing={1}>
+              <h3>Large Input Group</h3>
+              <InputGroup size="lg">
+                <InputGroupAddon position="prefix">@</InputGroupAddon>
+                <Input
+                  placeholder="username"
+                  className="form-control"
+                  size="lg"
+                />
+                <InputGroupAddon position="suffix">.com</InputGroupAddon>
+              </InputGroup>
+            </GridItem>
+          </Grid>
+        </>
       )}
       {page === "selects" && (
         <div style={{ display: "grid", gap: 16, maxWidth: 1200 }}>
@@ -1199,10 +1449,10 @@ export default function App() {
         </>
       )}
       {page === "colors" && (
-        <div style={{ display: "grid", gap: 16, maxWidth: 600 }}>
+        <>
           <h2 style={{ margin: 0 }}>Color Palette</h2>
-          <div className="bg-indigo-50 w-8 h-2 rounded shadow">Indigo</div>
-        </div>
+          <ColorPaletteGrid />
+        </>
       )}
       {page === "box" && (
         <>
@@ -1285,6 +1535,11 @@ export default function App() {
             </GridItem>
           </Grid>
           <Grid container fluid rowSpacing={1}></Grid>
+        </>
+      )}
+      {page === "DateTimePicker" && (
+        <>
+          <DateTimePicker timePicker />
         </>
       )}
     </DashboardLayout>

@@ -43,3 +43,261 @@
   border-color: #94a3b8;
   box-shadow: 0 2px 8px 0 rgb(30 41 59 / 10%);
 }
+
+.select:disabled {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  box-shadow: none;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.ui-notched-field {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+}
+
+.ui-notched-fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  position: relative;
+  width: 100%;
+}
+
+.ui-notched-field:hover .ui-notched-fieldset {
+  border-color: #94a3b8;
+}
+
+.ui-notched-field select:focus + .ui-notched-fieldset,
+.ui-notched-field select:focus-within + .ui-notched-fieldset {
+  border-color: #2563eb;
+}
+
+.ui-notched-label {
+  margin-left: 10px;
+  max-width: max-content;
+  padding: 0 6px;
+}
+
+.ui-notched-label-text {
+  background: #fff;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+.ui-select {
+  appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%2364748b' d='M5 7l5 5 5-5z'/%3E%3C/svg%3E");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  border: none;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  padding: 14px 12px;
+  padding-right: 36px;
+  pointer-events: auto;
+  width: 100%;
+}
+
+.ui-notched-sm {
+  border-radius: 6px;
+}
+
+.ui-select-sm {
+  font-size: 13px;
+  padding: 10px;
+}
+
+.ui-notched-md {
+  border-radius: 8px;
+}
+
+.ui-select-md {
+  font-size: 14px;
+  padding: 14px 12px;
+}
+
+.ui-notched-lg {
+  border-radius: 10px;
+}
+
+.ui-select-lg {
+  font-size: 16px;
+  padding: 18px 14px;
+}
+
+.ui-select:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.ui-select:disabled ~ .ui-notched-fieldset {
+  border-color: #e2e8f0;
+}
+
+.ui-notched-field.error .ui-notched-fieldset {
+  border-color: #dc2626;
+}
+
+.ui-notched-field.error .ui-notched-label-text {
+  color: #dc2626;
+}
+
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: 100%;
+}
+
+.ui-field-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ui-field-control {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.ui-input {
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+  width: 100%;
+}
+
+.ui-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #2563eb 15%, transparent);
+}
+
+.ui-input:hover {
+  border-color: #94a3b8;
+}
+
+.ui-input:disabled {
+  background-color: #f8fafc;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.ui-input-sm {
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 8px 10px;
+}
+
+.ui-input-md {
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.ui-input-lg {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 14px;
+}
+
+.ui-input-icon-end {
+  padding-right: 36px;
+}
+
+.ui-input-action {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #64748b;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 18px;
+  height: 28px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  width: 28px;
+}
+
+.ui-input-action-end {
+  right: 6px;
+}
+
+.ui-input-action:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.ui-input-action:active {
+  background-color: #cbd5e1;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+.ui-field.error .ui-input {
+  border-color: #dc2626;
+}
+
+.ui-field.error .ui-field-label {
+  color: #dc2626;
+}
+
+/* Custom dropdown for SearchSelect */
+.ui-searchselect-dropdown {
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 color-mix(in srgb, #1e293b 10%, transparent);
+  left: 0;
+  margin-top: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.ui-searchselect-option {
+  background: none;
+  border: none;
+  color: #0f172a;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.ui-searchselect-option:hover,
+.ui-searchselect-option[aria-selected="true"] {
+  background: #f1f5f9;
+  color: #2563eb;
+}

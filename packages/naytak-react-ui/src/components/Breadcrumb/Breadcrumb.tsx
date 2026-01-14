@@ -17,7 +17,7 @@ export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
 
 export function Breadcrumb({
   items,
-  separator = "/",
+  separator = ">>",
   ariaLabel = "Breadcrumb",
   size = "md",
   className,
