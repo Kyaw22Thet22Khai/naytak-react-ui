@@ -1,7 +1,7 @@
 import { createContext, useContext, ReactNode } from "react";
 
 //Component
-import { Button } from "naytak-react-ui";
+import { Button } from "../Button/Button";
 
 interface SidebarContextValue {
   collapsed: boolean;
